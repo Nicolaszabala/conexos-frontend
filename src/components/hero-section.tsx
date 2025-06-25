@@ -21,7 +21,7 @@ export default function HeroSection() {
       const steps = 60;
       const stepTime = duration / steps;
 
-      const intervals: NodeJS.Timeout[] = [];
+      const intervals: number[] = [];
       
       Object.entries(targets).forEach(([key, target]) => {
         const increment = target / steps;
