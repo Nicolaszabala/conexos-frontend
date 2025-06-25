@@ -1,0 +1,258 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: hsl(240, 10%, 3.9%);
+  --foreground: hsl(0, 0%, 98%);
+  --muted: hsl(240, 3.7%, 15.9%);
+  --muted-foreground: hsl(240, 5%, 64.9%);
+  --popover: hsl(240, 10%, 3.9%);
+  --popover-foreground: hsl(0, 0%, 98%);
+  --card: hsl(240, 10%, 3.9%);
+  --card-foreground: hsl(0, 0%, 98%);
+  --border: hsl(240, 3.7%, 15.9%);
+  --input: hsl(240, 3.7%, 15.9%);
+  --primary: hsl(244, 86%, 65%);
+  --primary-foreground: hsl(211, 100%, 99%);
+  --secondary: hsl(240, 3.7%, 15.9%);
+  --secondary-foreground: hsl(0, 0%, 98%);
+  --accent: hsl(240, 3.7%, 15.9%);
+  --accent-foreground: hsl(0, 0%, 98%);
+  --destructive: hsl(0, 62.8%, 30.6%);
+  --destructive-foreground: hsl(0, 0%, 98%);
+  --ring: hsl(240, 4.9%, 83.9%);
+  --radius: 0.5rem;
+
+  /* Custom Conexos colors - inspirados en n8n.io */
+  --dark-primary: hsl(240, 28%, 8%);
+  --dark-secondary: hsl(240, 21%, 13%);
+  --dark-tertiary: hsl(218, 25%, 18%);
+  --purple-primary: hsl(244, 86%, 65%);
+  --purple-secondary: hsl(261, 83%, 71%);
+  --blue-primary: hsl(217, 91%, 60%);
+  --success: hsl(158, 64%, 52%);
+  --warning: hsl(43, 96%, 56%);
+  
+  /* Nuevos colores inspirados en n8n.io */
+  --n8n-blue: hsl(210, 100%, 50%);
+  --n8n-purple: hsl(270, 100%, 60%);
+  --n8n-gradient: linear-gradient(135deg, hsl(210, 100%, 50%), hsl(270, 100%, 60%));
+  --n8n-card-bg: hsl(240, 10%, 6%);
+  --n8n-border: hsl(240, 3.7%, 20%);
+}
+
+.dark {
+  --background: hsl(240, 10%, 3.9%);
+  --foreground: hsl(0, 0%, 98%);
+  --muted: hsl(240, 3.7%, 15.9%);
+  --muted-foreground: hsl(240, 5%, 64.9%);
+  --popover: hsl(240, 10%, 3.9%);
+  --popover-foreground: hsl(0, 0%, 98%);
+  --card: hsl(240, 10%, 3.9%);
+  --card-foreground: hsl(0, 0%, 98%);
+  --border: hsl(240, 3.7%, 15.9%);
+  --input: hsl(240, 3.7%, 15.9%);
+  --primary: hsl(244, 86%, 65%);
+  --primary-foreground: hsl(211, 100%, 99%);
+  --secondary: hsl(240, 3.7%, 15.9%);
+  --secondary-foreground: hsl(0, 0%, 98%);
+  --accent: hsl(240, 3.7%, 15.9%);
+  --accent-foreground: hsl(0, 0%, 98%);
+  --destructive: hsl(0, 62.8%, 30.6%);
+  --destructive-foreground: hsl(0, 0%, 98%);
+  --ring: hsl(240, 4.9%, 83.9%);
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply font-sans antialiased bg-background text-foreground;
+    font-family: 'Inter', sans-serif;
+  }
+}
+
+@layer components {
+  .gradient-text {
+    background: var(--n8n-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .hero-button {
+    background: var(--n8n-gradient);
+    border: 1px solid transparent;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    font-weight: 600;
+  }
+
+  .hero-button:hover {
+    background: linear-gradient(135deg, hsl(270, 100%, 60%), hsl(210, 100%, 50%));
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px hsla(210, 100%, 50%, 0.3);
+  }
+
+  .hero-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, hsla(0, 0%, 100%, 0.2), transparent);
+    transition: left 0.5s;
+  }
+
+  .hero-button:hover::before {
+    left: 100%;
+  }
+
+  .service-card {
+    background: var(--n8n-card-bg);
+    border: 1px solid var(--n8n-border);
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+    border-radius: 12px;
+    overflow: hidden;
+  }
+
+  .service-card:hover {
+    background: hsl(240, 10%, 8%);
+    border-color: hsl(210, 100%, 50%);
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px hsla(0, 0%, 0%, 0.3);
+  }
+
+  .stats-counter {
+    font-size: 3rem;
+    font-weight: 800;
+    background: var(--n8n-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .connection-line {
+    position: absolute;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, hsl(210, 100%, 50%), transparent);
+    animation: pulse 4s ease-in-out infinite;
+  }
+
+  .connection-node {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background: hsl(210, 100%, 50%);
+    border-radius: 50%;
+    box-shadow: 0 0 20px hsl(210, 100%, 50%);
+    animation: pulse 3s ease-in-out infinite;
+  }
+
+  .network-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.1;
+    background-image: radial-gradient(circle at 1px 1px, hsla(0, 0%, 100%, 0.15) 1px, transparent 0);
+    background-size: 50px 50px;
+    animation: float 20s ease-in-out infinite;
+  }
+
+  /* Nuevos estilos inspirados en n8n.io */
+  .n8n-card {
+    background: var(--n8n-card-bg);
+    border: 1px solid var(--n8n-border);
+    border-radius: 12px;
+    transition: all 0.3s ease;
+  }
+
+  .n8n-card:hover {
+    border-color: hsl(210, 100%, 50%);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px hsla(210, 100%, 50%, 0.1);
+  }
+
+  .n8n-gradient-bg {
+    background: var(--n8n-gradient);
+  }
+
+  .n8n-text-gradient {
+    background: var(--n8n-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Efecto de luces de colores inspirado en n8n.io */
+  .color-light-effect {
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+  }
+
+  .color-light-effect::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at var(--mouse-x, 50%) var(--mouse-y, 50%), 
+                rgba(59, 130, 246, 0.1) 0%, 
+                rgba(147, 51, 234, 0.08) 25%, 
+                rgba(34, 197, 94, 0.06) 50%, 
+                transparent 70%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  .color-light-effect:hover::before {
+    opacity: 1;
+  }
+
+  .color-light-effect > * {
+    position: relative;
+    z-index: 2;
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+  }
+
+  @keyframes flow {
+    0% { stroke-dashoffset: 0; }
+    100% { stroke-dashoffset: -50; }
+  }
+
+  @keyframes networkPulse {
+    0%, 100% { 
+      transform: scale(1); 
+      opacity: 0.6; 
+    }
+    50% { 
+      transform: scale(1.2); 
+      opacity: 1; 
+    }
+  }
+
+  .network-flow {
+    animation: flow 4s ease-in-out infinite;
+  }
+
+  .network-pulse {
+    animation: networkPulse 3s ease-in-out infinite;
+  }
+}
