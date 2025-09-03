@@ -125,10 +125,12 @@ export default function AISolutionsSection() {
               ))}
             </div>
 
-            <Button className="hero-button px-8 py-4 text-lg font-semibold">
-              <Lightbulb className="mr-2 h-5 w-5" />
-              Explorar Soluciones IA
-            </Button>
+            <a href="https://zcal.co/conexos/15min" target="_blank" rel="noopener noreferrer">
+              <Button className="hero-button px-8 py-4 text-lg font-semibold">
+                <Lightbulb className="mr-2 h-5 w-5" />
+                Explorar Soluciones IA
+              </Button>
+            </a>
           </motion.div>
 
           <motion.div

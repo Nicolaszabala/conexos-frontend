@@ -10,20 +10,8 @@ import Footer from "@/components/footer";
 import NeuralNetworkLoader from "@/components/neural-network-loader";
 
 export default function Home() {
-  const [isLoading, setIsLoading] = useState(true);
-
-  useEffect(() => {
-    // Simular tiempo de carga
-    const timer = setTimeout(() => {
-      setIsLoading(false);
-    }, 3000);
-
-    return () => clearTimeout(timer);
-  }, []);
-
-  if (isLoading) {
-    return <NeuralNetworkLoader />;
-  }
+  // Desactivar temporalmente el loader para pruebas
+  const isLoading = false;
 
   return (
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden">

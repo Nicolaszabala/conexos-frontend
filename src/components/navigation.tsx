@@ -70,7 +70,7 @@ export default function Navigation() {
               <div className="w-10 h-10 n8n-gradient-bg rounded-lg flex items-center justify-center">
                 <Network className="text-white text-lg" />
               </div>
-              <span className="text-2xl font-bold n8n-text-gradient">Conexos</span>
+              <span className="text-2xl font-bold n8n-text-gradient font-['Conexos']">Conexos</span>
             </Link>
 
             {/* Desktop Navigation */}
@@ -102,12 +102,11 @@ export default function Navigation() {
               <Link href="/blog" className="text-muted-foreground hover:text-foreground transition-colors">
                 Blog
               </Link>
-              <Button
-                onClick={() => handleNavigation("contacto")}
-                className="hero-button px-6 py-2"
-              >
-                Contactar
-              </Button>
+              <a href="https://zcal.co/conexos/15min" target="_blank" rel="noopener noreferrer">
+                <Button className="hero-button px-6 py-2">
+                  Contactar
+                </Button>
+              </a>
             </div>
 
             {/* Mobile Menu Button */}
@@ -159,12 +158,11 @@ export default function Navigation() {
                 <Link href="/blog" className="block w-full text-left text-muted-foreground hover:text-foreground transition-colors">
                   Blog
                 </Link>
-                <Button
-                  onClick={() => handleNavigation("contacto")}
-                  className="hero-button w-full"
-                >
-                  Contactar
-                </Button>
+                <a href="https://zcal.co/conexos/15min" target="_blank" rel="noopener noreferrer" className="w-full">
+                  <Button className="hero-button w-full">
+                    Contactar
+                  </Button>
+                </a>
               </div>
             </motion.div>
           )}

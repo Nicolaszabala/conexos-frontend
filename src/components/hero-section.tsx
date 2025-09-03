@@ -44,7 +44,7 @@ export default function HeroSection() {
   }, [isVisible]);
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-32">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-32 pb-32">
       <HeroParticlesAnimation />
       
       <div className="container mx-auto px-12 text-center relative z-10" ref={ref}>
@@ -76,17 +76,13 @@ export default function HeroSection() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.4 }}
           >
-            <Button className="hero-button px-8 py-4 text-lg font-semibold">
-              <Rocket className="mr-2 h-5 w-5" />
-              Comenzar Ahora
-            </Button>
-            <Button
-              variant="outline"
-              className="px-8 py-4 text-lg font-semibold border-muted-foreground hover:border-primary"
-            >
-              <Play className="mr-2 h-5 w-5" />
-              Ver Demo
-            </Button>
+            <a href="https://zcal.co/conexos/15min" target="_blank" rel="noopener noreferrer">
+              <Button className="hero-button px-8 py-4 text-lg font-semibold">
+                <Rocket className="mr-2 h-5 w-5" />
+                Comenzar Ahora
+              </Button>
+            </a>
+            
           </motion.div>
 
           {/* Stats */}

@@ -2,6 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: 'Conexos';
+  src: url('/fonts/conexos.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
   --background: hsl(240, 10%, 3.9%);
   --foreground: hsl(0, 0%, 98%);
@@ -187,10 +195,12 @@
   }
 
   .n8n-text-gradient {
+    font-family:"Inter", system-ui, -apple-system, sans-serif;
     background: var(--n8n-gradient);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+    letter-spacing: 0.5px;
   }
 
   /* Efecto de luces de colores inspirado en n8n.io */

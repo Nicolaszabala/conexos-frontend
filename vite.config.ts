@@ -6,9 +6,9 @@ export default defineConfig({
   plugins: [react()],
   resolve: {
     alias: {
-      "@": path.resolve(import.meta.dirname, "src"),
-      "@shared": path.resolve(import.meta.dirname, "shared"),
-      "@assets": path.resolve(import.meta.dirname, "assets"),
+      "@": path.resolve(__dirname, "./src"),
+      "@shared": path.resolve(__dirname, "./shared"),
+      "@assets": path.resolve(__dirname, "./assets"),
     },
   },
   build: {
@@ -16,9 +16,13 @@ export default defineConfig({
     emptyOutDir: true,
   },
   server: {
+    port: 3000,
+    open: true,
     fs: {
-      strict: true,
-      deny: ["**/.*"],
+      strict: false, // Relajamos esta restricción para desarrollo
     },
   },
+  optimizeDeps: {
+    include: ['react', 'react-dom', 'wouter']
+  }
 });

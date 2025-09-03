@@ -1,5 +1,5 @@
 import { Network } from "lucide-react";
-import { SiLinkedin, SiX, SiInstagram } from "react-icons/si";
+import { SiLinkedin, SiInstagram, SiX } from "react-icons/si";
 
 const footerSections = [
   {
@@ -43,7 +43,7 @@ export default function Footer() {
               <div className="w-10 h-10 bg-gradient-to-br from-primary to-purple-600 rounded-lg flex items-center justify-center">
                 <Network className="text-white text-lg" />
               </div>
-              <span className="text-2xl font-bold gradient-text">Conexos</span>
+              <span className="text-2xl font-bold gradient-text font-['Conexos']">Conexos</span>
             </div>
             <p className="text-muted-foreground mb-6">
               Transformamos negocios españoles con IA y marketing digital 
@@ -79,7 +79,7 @@ export default function Footer() {
         </div>
 
         <div className="border-t border-border mt-12 pt-8 text-center text-muted-foreground">
-          <p>&copy; 2024 Conexos. Todos los derechos reservados. Hecho con ❤️ en Madrid.</p>
+          <p>&copy; 2025 Conexos. Todos los derechos reservados. Hecho con ❤️ en Galicia.</p>
         </div>
       </div>
     </footer>
