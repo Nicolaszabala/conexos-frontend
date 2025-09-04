@@ -5,7 +5,13 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 import { useScrollReveal } from "@/hooks/use-scroll-reveal";
 import { SiLinkedin, SiX, SiInstagram } from "react-icons/si";
 import { useState } from "react";
@@ -15,18 +21,18 @@ const contactInfo = [
   {
     icon: Phone,
     title: "Teléfono",
-    value: "+34 634 443 713"
+    value: "+34 634 443 713",
   },
   {
     icon: Mail,
     title: "Email",
-    value: "info@conexos.es"
+    value: "info@conexos.es",
   },
   {
     icon: MapPin,
     title: "Oficina",
-    value: "Galicia, España"
-  }
+    value: "Galicia, España",
+  },
 ];
 
 export default function ContactSection() {
@@ -59,11 +65,12 @@ export default function ContactSection() {
             transition={{ duration: 0.6 }}
           >
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
-              ¿Listo para <span className="gradient-text">Transformar</span> tu Negocio?
+              ¿Listo para <span className="gradient-text">Transformar</span> tu
+              Negocio?
             </h2>
             <p className="text-xl text-muted-foreground mb-8">
-              Agenda una llamada gratuita y descubre cómo podemos 
-              multiplicar tus leads con marketing digital.
+              Agenda una llamada gratuita y descubre cómo podemos multiplicar
+              tus leads con marketing digital.
             </p>
 
             <div className="space-y-6 mb-8">
@@ -86,9 +93,7 @@ export default function ContactSection() {
               ))}
             </div>
 
-            <div className="flex space-x-4">
-              
-            </div>
+            <div className="flex space-x-4"></div>
           </motion.div>
 
           <motion.div
@@ -98,14 +103,18 @@ export default function ContactSection() {
           >
             <Card className="bg-card/50 border-primary/20 backdrop-blur-sm">
               <CardContent className="p-8">
-                <h3 className="text-2xl font-bold mb-6">Solicita tu Consultoría Gratuita</h3>
+                <h3 className="text-2xl font-bold mb-6">Contactar</h3>
 
-                <form action="mailto:info@conexos.es"
-  method="POST"
-  encType="text/plain"
-  className="space-y-6">
+                <form
+                  action="https://formspree.io/f/mjkeprny"
+                  method="POST"
+                  className="space-y-6"
+                >
                   <div>
-                    <Label htmlFor="name" className="text-sm font-medium text-muted-foreground">
+                    <Label
+                      htmlFor="name"
+                      className="text-sm font-medium text-muted-foreground"
+                    >
                       Nombre Completo
                     </Label>
                     <Input
@@ -118,8 +127,11 @@ export default function ContactSection() {
                   </div>
 
                   <div>
-                    <Label htmlFor="email" className="text-sm font-medium text-muted-foreground">
-                      Email 
+                    <Label
+                      htmlFor="email"
+                      className="text-sm font-medium text-muted-foreground"
+                    >
+                      Email
                     </Label>
                     <Input
                       id="email"
@@ -131,7 +143,10 @@ export default function ContactSection() {
                   </div>
 
                   <div>
-                    <Label htmlFor="company" className="text-sm font-medium text-muted-foreground">
+                    <Label
+                      htmlFor="company"
+                      className="text-sm font-medium text-muted-foreground"
+                    >
                       Empresa
                     </Label>
                     <Input
@@ -143,10 +158,11 @@ export default function ContactSection() {
                     />
                   </div>
 
-                
-
                   <div>
-                    <Label htmlFor="message" className="text-sm font-medium text-muted-foreground">
+                    <Label
+                      htmlFor="message"
+                      className="text-sm font-medium text-muted-foreground"
+                    >
                       ¿Cómo podemos ayudarte?
                     </Label>
                     <Textarea
@@ -158,8 +174,8 @@ export default function ContactSection() {
                     />
                   </div>
 
-                  <Button 
-                    type="submit" 
+                  <Button
+                    type="submit"
                     className="hero-button w-full px-8 py-4 text-lg font-semibold"
                     disabled={isSubmitting}
                   >
@@ -168,8 +184,8 @@ export default function ContactSection() {
                   </Button>
 
                   <p className="text-sm text-muted-foreground text-center">
-                    Al enviar este formulario, aceptas nuestra política de privacidad. 
-                    Responderemos a la brevedad.
+                    Al enviar este formulario, aceptas nuestra política de
+                    privacidad. Responderemos a la brevedad.
                   </p>
                 </form>
               </CardContent>

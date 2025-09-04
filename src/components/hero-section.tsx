@@ -16,7 +16,7 @@ export default function HeroSection() {
 
   useEffect(() => {
     if (isVisible) {
-      const targets = { leads: 5000, satisfaction: 5, projects: 85, experience: 6 };
+      const targets = { leads: 5000, satisfaction: 5, projects: 28, experience: 6 };
       const duration = 2000;
       const steps = 60;
       const stepTime = duration / steps;

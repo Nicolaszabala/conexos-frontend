@@ -11,9 +11,7 @@ const teamMembers = [
     title: "Lic. en Administración",
     description: "MBA - Master en Marketing Digital",
     image: "/fonts/daniconexos.jpg",
-    social: [
-      { icon: SiLinkedin, href: "https://www.linkedin.com/in/danafernandez/" },
-    ]
+    
   },
   {
     name: "Nicolas Zabala",
@@ -21,9 +19,7 @@ const teamMembers = [
     title: "Grado en Ingeniería de Software",
     description: "Full Stack Web Developer",
     image: "/fonts/nicoconexos.png",
-    social: [
-      { icon: SiLinkedin, href: "https://www.linkedin.com/in/nicolas-zabala/" },
-    ]
+    
   }
 ];
 
@@ -77,17 +73,7 @@ export default function TeamSection() {
                   <p className="text-primary font-semibold mb-3">{member.role}</p>
                   <p className="text-lg font-medium text-gray-700 mb-2">{member.title}</p>
                   <p className="text-muted-foreground text-sm mb-4">{member.description}</p>
-                  <div className="flex justify-center space-x-3">
-                    {member.social.map((social, socialIndex) => (
-                      <a
-                        key={socialIndex}
-                        href={social.href}
-                        className="text-muted-foreground hover:text-primary transition-colors text-lg"
-                      >
-                        <social.icon />
-                      </a>
-                    ))}
-                  </div>
+                 
                 </CardContent>
               </Card>
             </motion.div>
