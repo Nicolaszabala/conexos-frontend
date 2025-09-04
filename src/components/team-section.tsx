@@ -1,47 +1,29 @@
 import { motion } from "framer-motion";
 import { Card, CardContent } from "@/components/ui/card";
 import { useScrollReveal } from "@/hooks/use-scroll-reveal";
-import { SiLinkedin, SiX, SiGithub, SiInstagram } from "react-icons/si";
+import { SiLinkedin } from "react-icons/si";
+import { useState } from "react";
 
 const teamMembers = [
+  
   {
-    name: "Carlos Martínez",
-    role: "Director de Marketing",
-    description: "15+ años en marketing digital y especialista en estrategias de growth hacking.",
-    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=400",
+    name: "Dana Fernández Rocha",
+    role: "Co-Founder",
+    description: "Licenciada en Administración - MBA - Master en Marketing Digital - Sommelier WSET3 Certificada",
+    image: "/fonts/daniconexos.png",
     social: [
-      { icon: SiLinkedin, href: "#" },
-      { icon: SiX, href: "#" }
+      { icon: SiLinkedin, href: "https://www.linkedin.com/in/danafernandez/" },
+    
     ]
   },
   {
-    name: "Ana García",
-    role: "Especialista en IA",
-    description: "PhD en Machine Learning con experiencia en automatización de procesos.",
-    image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=400",
+    name: "Nicolas Zabala",
+    role: "Co-Founder",
+    description: "Grado en Ingeniería de Software - Full Stack Web Developer",
+    image: "/fonts/nicoconexos.jpg",
     social: [
-      { icon: SiLinkedin, href: "#" },
-      { icon: SiGithub, href: "#" }
-    ]
-  },
-  {
-    name: "Miguel Torres",
-    role: "Estratega Creativo",
-    description: "Experto en contenido viral y campañas de alto impacto para redes sociales.",
-    image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=400",
-    social: [
-      { icon: SiLinkedin, href: "#" },
-      { icon: SiInstagram, href: "#" }
-    ]
-  },
-  {
-    name: "Laura Fernández",
-    role: "Analista de Datos",
-    description: "Especialista en business intelligence y optimización de conversiones.",
-    image: "https://images.unsplash.com/photo-1494790108755-2616b332c6c0?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=400",
-    social: [
-      { icon: SiLinkedin, href: "#" },
-      { icon: SiX, href: "#" }
+      { icon: SiLinkedin, href: "https://www.linkedin.com/in/nicolas-zabala/" },
+
     ]
   }
 ];
@@ -68,7 +50,7 @@ export default function TeamSection() {
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
           {teamMembers.map((member, index) => (
             <motion.div
               key={member.name}
@@ -78,12 +60,20 @@ export default function TeamSection() {
             >
               <Card className="service-card text-center h-full">
                 <CardContent className="p-6">
-                  <img
-                    src={member.image}
-                    alt={member.name}
-                    className="w-32 h-32 rounded-full mx-auto mb-4 object-cover"
-                    loading="lazy"
-                  />
+                  <div className="w-48 h-48 mx-auto mb-6 rounded-full overflow-hidden border-4 border-primary/20 bg-gray-100">
+                    <img
+  src={member.image}
+  alt={member.name}
+  className="w-full h-full object-cover grayscale contrast-110 hover:grayscale-0 transition duration-300"
+  onError={(e) => {
+    const target = e.target as HTMLImageElement;
+    console.error(`Error loading image: ${member.image}`);
+    target.onerror = null;
+    target.src = '/placeholder-avatar.png';
+    target.alt = 'Imagen no disponible';
+  }}
+/>
+                  </div>
                   <h3 className="text-xl font-bold mb-2">{member.name}</h3>
                   <p className="text-primary font-semibold mb-3">{member.role}</p>
                   <p className="text-muted-foreground text-sm mb-4">{member.description}</p>

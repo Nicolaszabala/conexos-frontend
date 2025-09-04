@@ -16,7 +16,7 @@ export default function HeroSection() {
 
   useEffect(() => {
     if (isVisible) {
-      const targets = { leads: 500, satisfaction: 95, projects: 150, experience: 24 };
+      const targets = { leads: 5000, satisfaction: 95, projects: 85, experience: 6 };
       const duration = 2000;
       const steps = 60;
       const stepTime = duration / steps;
@@ -56,7 +56,7 @@ export default function HeroSection() {
             transition={{ duration: 0.6 }}
           >
             Transforma tu negocio con{" "}
-            <span className="n8n-text-gradient">IA y Marketing Digital</span>
+            <span className="n8n-text-gradient">Marketing Digital</span>
           </motion.h1>
 
           <motion.p
@@ -65,8 +65,8 @@ export default function HeroSection() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            Generamos leads cualificados y automatizamos procesos con soluciones
-            de inteligencia artificial para empresas españolas que buscan crecer
+            Incrementamos las ventas y generamos leads cualificados y automatizamos procesos con soluciones
+            de inteligencia artificial para empresas que buscan crecer
             exponencialmente.
           </motion.p>
 
@@ -102,11 +102,11 @@ export default function HeroSection() {
             </div>
             <div className="text-center">
               <div className="stats-counter">{counters.projects}</div>
-              <p className="text-muted-foreground">Proyectos IA</p>
+              <p className="text-muted-foreground">Proyectos</p>
             </div>
             <div className="text-center">
               <div className="stats-counter">{counters.experience}</div>
-              <p className="text-muted-foreground">Meses Experiencia</p>
+              <p className="text-muted-foreground">Años de Experiencia</p>
             </div>
           </motion.div>
         </div>

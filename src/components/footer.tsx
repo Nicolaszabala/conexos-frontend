@@ -1,5 +1,5 @@
 import { Network } from "lucide-react";
-import { SiLinkedin, SiInstagram, SiX } from "react-icons/si";
+import { SiLinkedin,} from "react-icons/si";
 
 const footerSections = [
   {
@@ -15,11 +15,9 @@ const footerSections = [
   {
     title: "Empresa",
     links: [
-      "Sobre Nosotros",
-      "Casos de Éxito",
-      "Blog",
-      "Carreras",
-      "Contacto"
+      "Servicios",
+      "Soluciones IA",
+      "Equipo"
     ]
   },
   {
@@ -50,15 +48,8 @@ export default function Footer() {
               para generar leads de alta calidad y maximizar conversiones.
             </p>
             <div className="flex space-x-4">
-              <a href="#" className="w-10 h-10 bg-secondary rounded-lg flex items-center justify-center hover:bg-primary transition-colors">
-                <SiLinkedin className="text-white" />
-              </a>
-              <a href="#" className="w-10 h-10 bg-secondary rounded-lg flex items-center justify-center hover:bg-primary transition-colors">
-                <SiX className="text-white" />
-              </a>
-              <a href="#" className="w-10 h-10 bg-secondary rounded-lg flex items-center justify-center hover:bg-primary transition-colors">
-                <SiInstagram className="text-white" />
-              </a>
+             
+                
             </div>
           </div>
 

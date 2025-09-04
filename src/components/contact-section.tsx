@@ -15,17 +15,17 @@ const contactInfo = [
   {
     icon: Phone,
     title: "Teléfono",
-    value: "+34 900 123 456"
+    value: "+34 634 443 713"
   },
   {
     icon: Mail,
     title: "Email",
-    value: "hola@conexos.es"
+    value: "info@conexos.es"
   },
   {
     icon: MapPin,
     title: "Oficina",
-    value: "Madrid, España"
+    value: "Galicia, España"
   }
 ];
 
@@ -62,8 +62,8 @@ export default function ContactSection() {
               ¿Listo para <span className="gradient-text">Transformar</span> tu Negocio?
             </h2>
             <p className="text-xl text-muted-foreground mb-8">
-              Agenda una consultoría gratuita y descubre cómo podemos 
-              multiplicar tus leads con IA y marketing digital.
+              Agenda una llamada gratuita y descubre cómo podemos 
+              multiplicar tus leads con marketing digital.
             </p>
 
             <div className="space-y-6 mb-8">
@@ -87,15 +87,7 @@ export default function ContactSection() {
             </div>
 
             <div className="flex space-x-4">
-              <a href="#" className="w-12 h-12 bg-card rounded-lg flex items-center justify-center hover:bg-primary transition-colors">
-                <SiLinkedin className="text-white" />
-              </a>
-              <a href="#" className="w-12 h-12 bg-card rounded-lg flex items-center justify-center hover:bg-primary transition-colors">
-                <SiX className="text-white" />
-              </a>
-              <a href="#" className="w-12 h-12 bg-card rounded-lg flex items-center justify-center hover:bg-primary transition-colors">
-                <SiInstagram className="text-white" />
-              </a>
+              
             </div>
           </motion.div>
 
