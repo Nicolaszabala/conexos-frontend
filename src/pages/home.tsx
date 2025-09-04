@@ -19,7 +19,6 @@ export default function Home() {
       <HeroSection />
       <ServicesSection />
       <AISolutionsSection />
-      <CaseStudiesSection />
       <TeamSection />
       <ContactSection />
       <Footer />

@@ -100,7 +100,10 @@ export default function ContactSection() {
               <CardContent className="p-8">
                 <h3 className="text-2xl font-bold mb-6">Solicita tu Consultoría Gratuita</h3>
 
-                <form onSubmit={handleSubmit} className="space-y-6">
+                <form action="mailto:info@conexos.es"
+  method="POST"
+  encType="text/plain"
+  className="space-y-6">
                   <div>
                     <Label htmlFor="name" className="text-sm font-medium text-muted-foreground">
                       Nombre Completo
@@ -116,7 +119,7 @@ export default function ContactSection() {
 
                   <div>
                     <Label htmlFor="email" className="text-sm font-medium text-muted-foreground">
-                      Email Empresarial
+                      Email 
                     </Label>
                     <Input
                       id="email"
@@ -140,23 +143,7 @@ export default function ContactSection() {
                     />
                   </div>
 
-                  <div>
-                    <Label htmlFor="revenue" className="text-sm font-medium text-muted-foreground">
-                      Facturación Anual
-                    </Label>
-                    <Select>
-                      <SelectTrigger className="mt-2">
-                        <SelectValue placeholder="Selecciona rango" />
-                      </SelectTrigger>
-                      <SelectContent>
-                        <SelectItem value="less-100k">Menos de 100K €</SelectItem>
-                        <SelectItem value="100k-500k">100K - 500K €</SelectItem>
-                        <SelectItem value="500k-1m">500K - 1M €</SelectItem>
-                        <SelectItem value="1m-5m">1M - 5M €</SelectItem>
-                        <SelectItem value="more-5m">Más de 5M €</SelectItem>
-                      </SelectContent>
-                    </Select>
-                  </div>
+                
 
                   <div>
                     <Label htmlFor="message" className="text-sm font-medium text-muted-foreground">
@@ -177,12 +164,12 @@ export default function ContactSection() {
                     disabled={isSubmitting}
                   >
                     <Send className="mr-2 h-5 w-5" />
-                    {isSubmitting ? "Enviando..." : "Solicitar Consultoría Gratuita"}
+                    {isSubmitting ? "Enviando..." : "Contactar"}
                   </Button>
 
                   <p className="text-sm text-muted-foreground text-center">
                     Al enviar este formulario, aceptas nuestra política de privacidad. 
-                    Responderemos en 24 horas.
+                    Responderemos a la brevedad.
                   </p>
                 </form>
               </CardContent>

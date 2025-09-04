@@ -5,25 +5,24 @@ import { SiLinkedin } from "react-icons/si";
 import { useState } from "react";
 
 const teamMembers = [
-  
   {
     name: "Dana Fernández Rocha",
     role: "Co-Founder",
-    description: "Licenciada en Administración - MBA - Master en Marketing Digital - Sommelier WSET3 Certificada",
-    image: "/fonts/daniconexos.png",
+    title: "Lic. en Administración",
+    description: "MBA - Master en Marketing Digital",
+    image: "/fonts/daniconexos.jpg",
     social: [
       { icon: SiLinkedin, href: "https://www.linkedin.com/in/danafernandez/" },
-    
     ]
   },
   {
     name: "Nicolas Zabala",
     role: "Co-Founder",
-    description: "Grado en Ingeniería de Software - Full Stack Web Developer",
-    image: "/fonts/nicoconexos.jpg",
+    title: "Grado en Ingeniería de Software",
+    description: "Full Stack Web Developer",
+    image: "/fonts/nicoconexos.png",
     social: [
       { icon: SiLinkedin, href: "https://www.linkedin.com/in/nicolas-zabala/" },
-
     ]
   }
 ];
@@ -62,20 +61,21 @@ export default function TeamSection() {
                 <CardContent className="p-6">
                   <div className="w-48 h-48 mx-auto mb-6 rounded-full overflow-hidden border-4 border-primary/20 bg-gray-100">
                     <img
-  src={member.image}
-  alt={member.name}
-  className="w-full h-full object-cover grayscale contrast-110 hover:grayscale-0 transition duration-300"
-  onError={(e) => {
-    const target = e.target as HTMLImageElement;
-    console.error(`Error loading image: ${member.image}`);
-    target.onerror = null;
-    target.src = '/placeholder-avatar.png';
-    target.alt = 'Imagen no disponible';
-  }}
-/>
+                      src={member.image}
+                      alt={member.name}
+                      className="w-full h-full object-cover grayscale contrast-110 hover:grayscale-0 transition duration-300"
+                      onError={(e) => {
+                        const target = e.target as HTMLImageElement;
+                        console.error(`Error loading image: ${member.image}`);
+                        target.onerror = null;
+                        target.src = '/placeholder-avatar.png';
+                        target.alt = 'Imagen no disponible';
+                      }}
+                    />
                   </div>
                   <h3 className="text-xl font-bold mb-2">{member.name}</h3>
                   <p className="text-primary font-semibold mb-3">{member.role}</p>
+                  <p className="text-lg font-medium text-gray-700 mb-2">{member.title}</p>
                   <p className="text-muted-foreground text-sm mb-4">{member.description}</p>
                   <div className="flex justify-center space-x-3">
                     {member.social.map((social, socialIndex) => (

@@ -65,8 +65,7 @@ export default function ServicesSection() {
             Nuestros <span className="n8n-text-gradient">Servicios</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Combinamos estrategias de marketing digital probadas con tecnología de IA 
-            para maximizar tu ROI y generar leads de alta calidad.
+            Hacemos que tu negocio crezca, mientras te centras en lo que sabes hacer. <br></br> Nosotros, nos encargamos del marketing y la tecnología
           </p>
         </motion.div>
 

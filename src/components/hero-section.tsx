@@ -16,7 +16,7 @@ export default function HeroSection() {
 
   useEffect(() => {
     if (isVisible) {
-      const targets = { leads: 5000, satisfaction: 95, projects: 85, experience: 6 };
+      const targets = { leads: 5000, satisfaction: 5, projects: 85, experience: 6 };
       const duration = 2000;
       const steps = 60;
       const stepTime = duration / steps;
@@ -65,8 +65,8 @@ export default function HeroSection() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            Incrementamos las ventas y generamos leads cualificados y automatizamos procesos con soluciones
-            de inteligencia artificial para empresas que buscan crecer
+            Incrementamos las ventas, generamos leads cualificados y automatizamos procesos
+             para empresas que buscan crecer
             exponencialmente.
           </motion.p>
 
@@ -97,8 +97,8 @@ export default function HeroSection() {
               <p className="text-muted-foreground">Leads Generados</p>
             </div>
             <div className="text-center">
-              <div className="stats-counter">{counters.satisfaction}%</div>
-              <p className="text-muted-foreground">Satisfacción</p>
+              <div className="stats-counter">{counters.satisfaction}</div>
+              <p className="text-muted-foreground">Áreas de especialización</p>
             </div>
             <div className="text-center">
               <div className="stats-counter">{counters.projects}</div>

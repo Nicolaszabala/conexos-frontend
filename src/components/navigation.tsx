@@ -91,18 +91,11 @@ export default function Navigation() {
                 onClick={() => handleNavigation("casos")}
                 className="text-muted-foreground hover:text-foreground transition-colors"
               >
-                Casos de Éxito
-              </button>
-              <button
-                onClick={() => handleNavigation("equipo")}
-                className="text-muted-foreground hover:text-foreground transition-colors"
-              >
+              
                 Equipo
               </button>
-              <Link href="/blog" className="text-muted-foreground hover:text-foreground transition-colors">
-                Blog
-              </Link>
-              <a href="https://zcal.co/conexos/15min" target="_blank" rel="noopener noreferrer">
+
+              <a href="#contacto">
                 <Button className="hero-button px-6 py-2">
                   Contactar
                 </Button>
