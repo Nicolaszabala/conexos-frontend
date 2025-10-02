@@ -7,7 +7,7 @@ import Home from "@/pages/home";
 import NotFound from "@/pages/not-found";
 import Blog from "@/pages/Blog";
 import Article from "@/pages/Article";
-import { Analytics } from '@vercel/analytics/next';
+import { Analytics } from '@vercel/analytics/react';
 
 
 function Router() {
