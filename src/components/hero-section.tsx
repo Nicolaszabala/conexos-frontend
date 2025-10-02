@@ -16,7 +16,7 @@ export default function HeroSection() {
 
   useEffect(() => {
     if (isVisible) {
-      const targets = { leads: 5000, satisfaction: 5, projects: 28, experience: 6 };
+      const targets = { leads: 100000, satisfaction: 5, projects: 28, experience: 6 };
       const duration = 2000;
       const steps = 60;
       const stepTime = duration / steps;
@@ -65,9 +65,7 @@ export default function HeroSection() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            Incrementamos las ventas, generamos leads cualificados y automatizamos procesos
-             para empresas que buscan crecer
-            exponencialmente.
+            Impulsamos el impacto positivo a través del marketing digital. Trabajamos con fundaciones, empresas B y proyectos sustentables para amplificar sus mensajes y conectar con audiencias comprometidas con un futuro más sostenible.
           </motion.p>
 
           <motion.div

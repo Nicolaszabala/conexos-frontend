@@ -14,7 +14,7 @@ const teamMembers = [
     
   },
   {
-    name: "Nicolas Zabala",
+    name: "Nicolás Zabala",
     role: "Co-Founder",
     title: "Grado en Ingeniería de Software",
     description: "Full Stack Web Developer",

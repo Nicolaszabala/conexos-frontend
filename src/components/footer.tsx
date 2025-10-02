@@ -69,6 +69,8 @@ export default function Footer() {
           ))}
         </div>
 
+       
+
         <div className="border-t border-border mt-12 pt-8 text-center text-muted-foreground">
           <p>&copy; 2025 Conexos. Todos los derechos reservados. Hecho con ❤️ en Galicia.</p>
         </div>

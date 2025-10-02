@@ -7,16 +7,17 @@ import CaseStudiesSection from "@/components/case-studies-section";
 import TeamSection from "@/components/team-section";
 import ContactSection from "@/components/contact-section";
 import Footer from "@/components/footer";
-import NeuralNetworkLoader from "@/components/neural-network-loader";
-
+import TrustedBySection from "@/components/trusted-by-section";
 export default function Home() {
   // Desactivar temporalmente el loader para pruebas
   const isLoading = false;
 
   return (
-    <div className="min-h-screen bg-background text-foreground overflow-x-hidden">
+    <div className="min-h-screen bg-background text-foreground overflow-x-hidden bg-gradient-light relative">
+      
       <Navigation />
       <HeroSection />
+      <TrustedBySection />
       <ServicesSection />
       <AISolutionsSection />
       <TeamSection />
