@@ -148,9 +148,9 @@ export default function Navigation() {
                 >
                   Equipo
                 </button>
-                <Link href="/blog" className="block w-full text-left text-muted-foreground hover:text-foreground transition-colors">
+                {/*<Link href="/blog" className="block w-full text-left text-muted-foreground hover:text-foreground transition-colors">
                   Blog
-                </Link>
+                </Link>*/}
                 <a href="https://zcal.co/conexos/15min" target="_blank" rel="noopener noreferrer" className="w-full">
                   <Button className="hero-button w-full">
                     Contactar
