@@ -65,7 +65,9 @@ export default function ServicesSection() {
             Nuestros <span className="n8n-text-gradient">Servicios</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Hacemos que tu negocio crezca, mientras te centras en lo que sabes hacer. <br></br> Nosotros, nos encargamos del marketing y la tecnología
+            Soluciones completas de marketing digital con IA, automatización y desarrollo técnico.
+            <br />
+            <span className="text-foreground font-semibold mt-2 inline-block">Desde 1.500€/mes en retainers mensuales</span>
           </p>
         </motion.div>
 

@@ -16,7 +16,7 @@ export default function HeroSection() {
 
   useEffect(() => {
     if (isVisible) {
-      const targets = { leads: 100000, satisfaction: 5, projects: 28, experience: 6 };
+      const targets = { leads: 800000, satisfaction: 4, projects: 28, experience: 10 };
       const duration = 2000;
       const steps = 60;
       const stepTime = duration / steps;
@@ -50,22 +50,24 @@ export default function HeroSection() {
       <div className="container mx-auto px-12 text-center relative z-10" ref={ref}>
         <div className="max-w-4xl mx-auto">
           <motion.h1
-            className="text-5xl md:text-7xl font-bold mb-6"
+            className="text-5xl md:text-7xl font-bold mb-6 leading-tight"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            Transforma tu negocio con{" "}
-            <span className="n8n-text-gradient">Marketing Digital</span>
+            <span className="n8n-text-gradient">Paquete Completo de Soluciones IT</span> para Empresas con Propósito
           </motion.h1>
 
           <motion.p
-            className="text-xl md:text-2xl text-muted-foreground mb-8"
+            className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-3xl mx-auto"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            Impulsamos el impacto positivo a través del marketing digital. Trabajamos con fundaciones, empresas B y proyectos sustentables para amplificar sus mensajes y conectar con audiencias comprometidas con un futuro más sostenible.
+            <strong className="text-foreground">Desarrollo Web + Marketing Digital + Automatización con IA</strong>.
+            Un equipo completo de ingenieros, diseñadores y estrategas digitales trabajando para tu crecimiento.
+            <br />
+            <span className="text-lg mt-2 inline-block">Especialistas en ONGs, e-commerce, educación y salud.</span>
           </motion.p>
 
           <motion.div
@@ -91,20 +93,20 @@ export default function HeroSection() {
             transition={{ duration: 0.6, delay: 0.6 }}
           >
             <div className="text-center">
-              <div className="stats-counter">{counters.leads}</div>
-              <p className="text-muted-foreground">Leads Generados</p>
+              <div className="stats-counter">{counters.leads}+</div>
+              <p className="text-muted-foreground font-medium">Leads Generados</p>
             </div>
             <div className="text-center">
               <div className="stats-counter">{counters.satisfaction}</div>
-              <p className="text-muted-foreground">Áreas de especialización</p>
+              <p className="text-muted-foreground font-medium">Industrias</p>
             </div>
             <div className="text-center">
-              <div className="stats-counter">{counters.projects}</div>
-              <p className="text-muted-foreground">Proyectos</p>
+              <div className="stats-counter">{counters.projects}+</div>
+              <p className="text-muted-foreground font-medium">Proyectos</p>
             </div>
             <div className="text-center">
-              <div className="stats-counter">{counters.experience}</div>
-              <p className="text-muted-foreground">Años de Experiencia</p>
+              <div className="stats-counter">{counters.experience}+</div>
+              <p className="text-muted-foreground font-medium">Años de Experiencia</p>
             </div>
           </motion.div>
         </div>

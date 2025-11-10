@@ -27,8 +27,12 @@ export default function TeamSection() {
   const { ref, isVisible } = useScrollReveal();
 
   return (
-    <section id="equipo" className="py-20">
-      <div className="container mx-auto px-12">
+    <section id="equipo" className="py-20 bg-background relative overflow-hidden">
+      {/* Decorative gradients */}
+      <div className="absolute top-20 right-10 w-96 h-96 bg-pink-400/10 rounded-full blur-3xl" />
+      <div className="absolute bottom-20 left-10 w-80 h-80 bg-purple-400/10 rounded-full blur-3xl" />
+
+      <div className="container mx-auto px-12 relative z-10">
         <motion.div
           className="text-center mb-16"
           ref={ref}
@@ -53,7 +57,7 @@ export default function TeamSection() {
               animate={isVisible ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: index * 0.1 }}
             >
-              <Card className="service-card text-center h-full">
+              <Card className="n8n-card text-center h-full">
                 <CardContent className="p-6">
                   <div className="w-48 h-48 mx-auto mb-6 rounded-full overflow-hidden border-4 border-primary/20 bg-gray-100">
                     <img

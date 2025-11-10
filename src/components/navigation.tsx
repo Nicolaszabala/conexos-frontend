@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Network, Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link, useLocation } from "wouter";
+import ConexosLogo from "@/components/conexos-logo";
 
 export default function Navigation() {
   const [location] = useLocation();
@@ -66,11 +67,13 @@ export default function Navigation() {
           transition={{ duration: 0.4, ease: "easeInOut" }}
         >
           <div className="container mx-auto px-12 flex items-center justify-between">
-            <Link href="/" className="flex items-center space-x-2">
-              <div className="w-10 h-10 n8n-gradient-bg rounded-lg flex items-center justify-center">
-                <Network className="text-white text-lg" />
+            <Link href="/" className="flex items-center space-x-3 group">
+              <div className="transition-transform duration-300 group-hover:scale-110">
+                <ConexosLogo size={44} variant="gradient" />
               </div>
-              <span className="text-2xl font-bold n8n-text-gradient font-['Conexos']">Conexos</span>
+              <span className="text-2xl font-extrabold n8n-text-gradient tracking-tight">
+                Conexos
+              </span>
             </Link>
 
             {/* Desktop Navigation */}
@@ -88,11 +91,16 @@ export default function Navigation() {
                 Soluciones IA
               </button>
               <button
+                onClick={() => handleNavigation("industrias")}
+                className="text-muted-foreground hover:text-foreground transition-colors"
+              >
+                Industrias
+              </button>
+              <button
                 onClick={() => handleNavigation("casos")}
                 className="text-muted-foreground hover:text-foreground transition-colors"
               >
-              
-                Equipo
+                Casos de Éxito
               </button>
 
               <a href="#contacto">

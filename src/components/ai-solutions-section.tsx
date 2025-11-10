@@ -60,7 +60,7 @@ function ColorLightEffect({ children }: { children: React.ReactNode }) {
   return (
     <div
       ref={containerRef}
-      className="color-light-effect rounded-2xl bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 p-8 border border-slate-700/50"
+      className="color-light-effect rounded-2xl n8n-card p-8 relative overflow-hidden"
     >
       {/* Efecto de luces de colores con CSS custom properties */}
       <div
@@ -68,13 +68,13 @@ function ColorLightEffect({ children }: { children: React.ReactNode }) {
         style={{
           opacity: isHovering ? 1 : 0,
           background: `
-            radial-gradient(800px circle at ${mousePosition.x}px ${mousePosition.y}px, rgba(59, 130, 246, 0.08), transparent 50%),
-            radial-gradient(600px circle at ${mousePosition.x}px ${mousePosition.y}px, rgba(147, 51, 234, 0.06), transparent 40%),
-            radial-gradient(400px circle at ${mousePosition.x}px ${mousePosition.y}px, rgba(34, 197, 94, 0.04), transparent 30%)
+            radial-gradient(800px circle at ${mousePosition.x}px ${mousePosition.y}px, rgba(59, 130, 246, 0.15), transparent 50%),
+            radial-gradient(600px circle at ${mousePosition.x}px ${mousePosition.y}px, rgba(147, 51, 234, 0.12), transparent 40%),
+            radial-gradient(400px circle at ${mousePosition.x}px ${mousePosition.y}px, rgba(34, 197, 94, 0.08), transparent 30%)
           `
         }}
       />
-      
+
       {/* Contenido */}
       <div className="relative z-10">
         {children}
@@ -140,34 +140,37 @@ export default function AISolutionsSection() {
           >
             <ColorLightEffect>
               <div className="text-center">
-                <div className="w-16 h-16 n8n-gradient-bg rounded-full flex items-center justify-center mx-auto mb-6">
-                  <Brain className="text-white text-2xl" />
+                <div className="w-20 h-20 n8n-gradient-bg rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg">
+                  <Brain className="text-white w-10 h-10" />
                 </div>
-                <h3 className="text-2xl font-bold mb-4 text-white">
+                <h3 className="text-3xl font-bold mb-4 text-foreground">
                   Inteligencia Artificial
                 </h3>
-                <p className="text-slate-300 mb-6">
-                  Sistemas inteligentes que aprenden y se adaptan automáticamente 
+                <p className="text-muted-foreground mb-8 text-lg leading-relaxed">
+                  Sistemas inteligentes que aprenden y se adaptan automáticamente
                   para optimizar tus resultados de marketing.
                 </p>
-                <div className="grid grid-cols-3 gap-4">
+                <div className="grid grid-cols-3 gap-6">
                   <div className="text-center">
-                    <div className="w-8 h-8 bg-blue-500/20 rounded-full flex items-center justify-center mx-auto mb-2">
-                      <div className="w-2 h-2 bg-blue-400 rounded-full"></div>
+                    <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center mx-auto mb-3 shadow-md">
+                      <div className="w-3 h-3 bg-white rounded-full"></div>
                     </div>
-                    <p className="text-xs text-slate-400">ML</p>
+                    <p className="text-sm font-semibold text-foreground">ML</p>
+                    <p className="text-xs text-muted-foreground mt-1">Machine Learning</p>
                   </div>
                   <div className="text-center">
-                    <div className="w-8 h-8 bg-purple-500/20 rounded-full flex items-center justify-center mx-auto mb-2">
-                      <div className="w-2 h-2 bg-purple-400 rounded-full"></div>
+                    <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-purple-600 rounded-xl flex items-center justify-center mx-auto mb-3 shadow-md">
+                      <div className="w-3 h-3 bg-white rounded-full"></div>
                     </div>
-                    <p className="text-xs text-slate-400">NLP</p>
+                    <p className="text-sm font-semibold text-foreground">NLP</p>
+                    <p className="text-xs text-muted-foreground mt-1">Natural Language</p>
                   </div>
                   <div className="text-center">
-                    <div className="w-8 h-8 bg-green-500/20 rounded-full flex items-center justify-center mx-auto mb-2">
-                      <div className="w-2 h-2 bg-green-400 rounded-full"></div>
+                    <div className="w-12 h-12 bg-gradient-to-br from-green-500 to-green-600 rounded-xl flex items-center justify-center mx-auto mb-3 shadow-md">
+                      <div className="w-3 h-3 bg-white rounded-full"></div>
                     </div>
-                    <p className="text-xs text-slate-400">CV</p>
+                    <p className="text-sm font-semibold text-foreground">CV</p>
+                    <p className="text-xs text-muted-foreground mt-1">Computer Vision</p>
                   </div>
                 </div>
               </div>

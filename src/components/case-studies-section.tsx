@@ -5,32 +5,36 @@ import { useScrollReveal } from "@/hooks/use-scroll-reveal";
 
 const caseStudies = [
   {
-    title: "E-commerce Fashion - 340% Aumento en Leads",
-    description: "Implementamos un sistema de IA para personalización de productos y automatización de email marketing, resultando en un incremento masivo de leads cualificados.",
+    title: "Asociación Petís - Comunidad de Apoyo a la Crianza en Pontevedra",
+    description: "Desarrollamos una plataforma headless moderna (Drupal + Next.js) que permite a esta asociación de apoyo a la lactancia y crianza gestionar su comunidad y contenido autónomamente, creando un espacio seguro para familias.",
     metrics: [
-      { value: "340%", label: "Aumento Leads" },
-      { value: "85%", label: "Tasa Conversión" }
+      { value: "0", label: "Tickets Soporte/Mes" },
+      { value: "100%", label: "Gestión Autónoma" }
+    ],
+    tags: [
+      { icon: Tag, label: "Asociación" },
+      { icon: Bot, label: "Headless CMS" },
+      { icon: Cloud, label: "Next.js + Drupal" }
+    ],
+    image: "https://images.unsplash.com/photo-1476703993599-0035a21b17a9?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=500",
+    testimonial: "Un lugar seguro donde criar en rede. La plataforma nos permite gestionar toda nuestra comunidad sin depender de técnicos.",
+    client: "Asociación Petís, Pontevedra"
+  },
+  {
+    title: "E-commerce Vino - Recuperación Automatizada de Carritos",
+    description: "Implementamos un sistema de automatización que recupera carritos abandonados mediante email marketing inteligente y segmentación dinámica.",
+    metrics: [
+      { value: "30%", label: "Carritos Recuperados" },
+      { value: "45%", label: "Aumento Conversión" }
     ],
     tags: [
       { icon: Tag, label: "E-commerce" },
-      { icon: Bot, label: "IA Personalización" },
-      { icon: Mail, label: "Email Marketing" }
+      { icon: Mail, label: "Email Marketing" },
+      { icon: TrendingUp, label: "Automatización" }
     ],
-    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=500"
-  },
-  {
-    title: "SaaS B2B - 250% ROI en 6 Meses",
-    description: "Desarrollamos un sistema de lead scoring con IA y automatización de nurturing que transformó su proceso de ventas completo.",
-    metrics: [
-      { value: "250%", label: "ROI Obtenido" },
-      { value: "60%", label: "Reducción Costes" }
-    ],
-    tags: [
-      { icon: Cloud, label: "SaaS" },
-      { icon: Users, label: "B2B" },
-      { icon: TrendingUp, label: "Lead Scoring" }
-    ],
-    image: "https://images.unsplash.com/photo-1587620962725-abab7fe55159?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=500"
+    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=500",
+    testimonial: "Recuperamos ventas que antes perdíamos. El sistema funciona solo.",
+    client: "E-commerce Vinos, España"
   }
 ];
 
@@ -38,8 +42,12 @@ export default function CaseStudiesSection() {
   const { ref, isVisible } = useScrollReveal();
 
   return (
-    <section id="casos" className="py-20 bg-secondary">
-      <div className="container mx-auto px-12">
+    <section id="casos" className="py-20 bg-muted/30 relative overflow-hidden">
+      {/* Decorative elements */}
+      <div className="absolute top-40 right-10 w-80 h-80 bg-green-400/10 rounded-full blur-3xl" />
+      <div className="absolute bottom-40 left-10 w-96 h-96 bg-blue-400/10 rounded-full blur-3xl" />
+
+      <div className="container mx-auto px-12 relative z-10">
         <motion.div
           className="text-center mb-16"
           ref={ref}
@@ -51,8 +59,8 @@ export default function CaseStudiesSection() {
             Casos de <span className="n8n-text-gradient">Éxito</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Descubre cómo hemos ayudado a empresas españolas a multiplicar 
-            sus leads y optimizar sus procesos con IA.
+            Proyectos reales con resultados medibles. Así ayudamos a organizaciones
+            a escalar su captación mediante tecnología y automatización.
           </p>
         </motion.div>
 
@@ -79,24 +87,37 @@ export default function CaseStudiesSection() {
                 animate={isVisible ? { opacity: 1, x: 0 } : {}}
                 transition={{ duration: 0.6, delay: index * 0.2 + 0.2 }}
               >
-                <Card className="bg-card/50 border-primary/20 backdrop-blur-sm">
+                <Card className="n8n-card">
                   <CardContent className="p-8">
-                    <h3 className="text-2xl font-bold mb-4">{study.title}</h3>
-                    <p className="text-muted-foreground mb-6">{study.description}</p>
+                    <h3 className="text-2xl font-bold mb-4 text-foreground">{study.title}</h3>
+                    <p className="text-muted-foreground mb-6 leading-relaxed">{study.description}</p>
 
-                    <div className="grid grid-cols-2 gap-6 mb-6">
+                    {/* Metrics */}
+                    <div className="grid grid-cols-2 gap-6 mb-6 p-6 bg-muted/50 rounded-xl">
                       {study.metrics.map((metric, metricIndex) => (
                         <div key={metricIndex} className="text-center">
-                          <div className="text-3xl font-bold gradient-text">{metric.value}</div>
-                          <p className="text-sm text-muted-foreground">{metric.label}</p>
+                          <div className="text-4xl font-bold n8n-text-gradient mb-1">{metric.value}</div>
+                          <p className="text-sm text-muted-foreground font-medium">{metric.label}</p>
                         </div>
                       ))}
                     </div>
 
-                    <div className="flex items-center space-x-4 text-sm text-muted-foreground">
+                    {/* Testimonial */}
+                    {'testimonial' in study && (
+                      <div className="mb-6 p-4 border-l-4 border-accent bg-muted/30 rounded">
+                        <p className="text-foreground italic mb-2">"{study.testimonial}"</p>
+                        <p className="text-sm text-muted-foreground">— {study.client}</p>
+                      </div>
+                    )}
+
+                    {/* Tags */}
+                    <div className="flex flex-wrap gap-3">
                       {study.tags.map((tag, tagIndex) => (
-                        <span key={tagIndex} className="flex items-center">
-                          <tag.icon className="mr-1 h-4 w-4" />
+                        <span
+                          key={tagIndex}
+                          className="flex items-center gap-1 px-3 py-1.5 bg-background/80 border border-border rounded-full text-sm text-foreground"
+                        >
+                          <tag.icon className="h-3.5 w-3.5" />
                           {tag.label}
                         </span>
                       ))}

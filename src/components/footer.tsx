@@ -1,5 +1,6 @@
-import { Network } from "lucide-react";
-import { SiLinkedin,} from "react-icons/si";
+import { Network, Phone, Mail, MapPin } from "lucide-react";
+import { SiLinkedin } from "react-icons/si";
+import ConexosLogo from "@/components/conexos-logo";
 
 const footerSections = [
   {
@@ -33,23 +34,50 @@ const footerSections = [
 
 export default function Footer() {
   return (
-    <footer className="bg-background border-t border-border">
-      <div className="container mx-auto px-12 py-12">
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+    <footer className="bg-muted/30 border-t border-border/50">
+      <div className="container mx-auto px-12 py-16">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12">
+          {/* Logo y descripción */}
           <div>
-            <div className="flex items-center space-x-2 mb-6">
-              <div className="w-10 h-10 bg-gradient-to-br from-primary to-purple-600 rounded-lg flex items-center justify-center">
-                <Network className="text-white text-lg" />
-              </div>
-              <span className="text-2xl font-bold gradient-text font-['Conexos']">Conexos</span>
+            <div className="flex items-center space-x-3 mb-6">
+              <ConexosLogo size={40} variant="gradient" />
+              <span className="text-2xl font-extrabold n8n-text-gradient tracking-tight">
+                Conexos
+              </span>
             </div>
-            <p className="text-muted-foreground mb-6">
-              Transformamos negocios españoles con IA y marketing digital 
-              para generar leads de alta calidad y maximizar conversiones.
+            <p className="text-muted-foreground mb-6 leading-relaxed">
+              Sistemas de captación automatizada para organizaciones con propósito.
+              Desarrollo técnico + automatización + estrategia.
             </p>
-            <div className="flex space-x-4">
-             
-                
+
+            {/* Información de contacto */}
+            <div className="space-y-3">
+              <a
+                href="tel:+34634443713"
+                className="flex items-center gap-3 text-foreground hover:text-primary transition-colors group"
+              >
+                <div className="w-9 h-9 rounded-lg bg-gradient-to-br from-orange-500 to-pink-500 flex items-center justify-center group-hover:scale-110 transition-transform">
+                  <Phone className="w-4 h-4 text-white" />
+                </div>
+                <span className="font-medium">+34 634 443 713</span>
+              </a>
+
+              <a
+                href="mailto:info@conexos.es"
+                className="flex items-center gap-3 text-foreground hover:text-primary transition-colors group"
+              >
+                <div className="w-9 h-9 rounded-lg bg-gradient-to-br from-pink-500 to-purple-500 flex items-center justify-center group-hover:scale-110 transition-transform">
+                  <Mail className="w-4 h-4 text-white" />
+                </div>
+                <span className="font-medium">info@conexos.es</span>
+              </a>
+
+              <div className="flex items-center gap-3 text-muted-foreground">
+                <div className="w-9 h-9 rounded-lg bg-gradient-to-br from-purple-500 to-yellow-500 flex items-center justify-center">
+                  <MapPin className="w-4 h-4 text-white" />
+                </div>
+                <span className="font-medium">Galicia, España</span>
+              </div>
             </div>
           </div>
 

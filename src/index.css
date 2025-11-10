@@ -11,65 +11,97 @@
 }
 
 :root {
-  --background: hsl(240, 10%, 3.9%);
-  --foreground: hsl(0, 0%, 98%);
-  --muted: hsl(240, 3.7%, 15.9%);
-  --muted-foreground: hsl(240, 5%, 64.9%);
-  --popover: hsl(240, 10%, 3.9%);
-  --popover-foreground: hsl(0, 0%, 98%);
-  --card: hsl(240, 10%, 3.9%);
-  --card-foreground: hsl(0, 0%, 98%);
-  --border: hsl(240, 3.7%, 15.9%);
-  --input: hsl(240, 3.7%, 15.9%);
-  --primary: hsl(244, 86%, 65%);
-  --primary-foreground: hsl(211, 100%, 99%);
-  --secondary: hsl(240, 3.7%, 15.9%);
-  --secondary-foreground: hsl(0, 0%, 98%);
-  --accent: hsl(240, 3.7%, 15.9%);
-  --accent-foreground: hsl(0, 0%, 98%);
-  --destructive: hsl(0, 62.8%, 30.6%);
-  --destructive-foreground: hsl(0, 0%, 98%);
-  --ring: hsl(240, 4.9%, 83.9%);
-  --radius: 0.5rem;
+  /* Fondos - GRADIENTE SUAVE VIBRANTE */
+  --background: hsl(220, 30%, 97%);
+  --background-gradient: linear-gradient(180deg, hsl(220, 40%, 98%) 0%, hsl(240, 35%, 96%) 100%);
+  --foreground: hsl(240, 25%, 8%); /* Negro casi puro para contraste fuerte */
 
-  /* Custom Conexos colors - inspirados en n8n.io */
-  --dark-primary: hsl(240, 28%, 8%);
-  --dark-secondary: hsl(240, 21%, 13%);
-  --dark-tertiary: hsl(218, 25%, 18%);
-  --purple-primary: hsl(244, 86%, 65%);
-  --purple-secondary: hsl(261, 83%, 71%);
-  --blue-primary: hsl(217, 91%, 60%);
-  --success: hsl(158, 64%, 52%);
-  --warning: hsl(43, 96%, 56%);
-  
-  /* Nuevos colores inspirados en n8n.io */
-  --n8n-blue: hsl(210, 100%, 50%);
-  --n8n-purple: hsl(270, 100%, 60%);
-  --n8n-gradient: linear-gradient(135deg, hsl(210, 100%, 50%), hsl(270, 100%, 60%));
-  --n8n-card-bg: hsl(240, 10%, 6%);
-  --n8n-border: hsl(240, 3.7%, 20%);
+  --muted: hsl(240, 20%, 94%);
+  --muted-foreground: hsl(240, 15%, 35%); /* Más oscuro para mejor legibilidad */
+
+  --popover: hsla(0, 0%, 100%, 0.95);
+  --popover-foreground: hsl(240, 25%, 8%);
+
+  --card: hsla(0, 0%, 100%, 0.9);
+  --card-foreground: hsl(240, 25%, 8%);
+
+  --border: hsl(240, 30%, 85%);
+  --input: hsl(240, 25%, 92%);
+
+  --primary: hsl(210, 100%, 55%);
+  --primary-foreground: hsl(0, 0%, 100%);
+
+  --secondary: hsl(240, 20%, 94%);
+  --secondary-foreground: hsl(240, 25%, 8%);
+
+  --accent: hsl(270, 100%, 62%);
+  --accent-foreground: hsl(0, 0%, 100%);
+
+  --destructive: hsl(0, 84%, 60%);
+  --destructive-foreground: hsl(0, 0%, 100%);
+
+  --ring: hsl(210, 100%, 55%);
+  --radius: 1rem;
+
+  /* Glassmorphism VIBRANTE */
+  --glass-bg: hsla(0, 0%, 100%, 0.6);
+  --glass-bg-strong: hsla(0, 0%, 100%, 0.8);
+  --glass-border: hsla(240, 50%, 75%, 0.4);
+  --glass-border-strong: hsla(240, 60%, 70%, 0.6);
+  --glass-shadow: hsla(240, 50%, 30%, 0.15);
+  --glass-shadow-strong: hsla(240, 50%, 20%, 0.25);
+
+  /* Acentos de Color - TONOS DORADOS CÁLIDOS */
+  --warm-gold: hsl(28, 100%, 68%);        /* #ffb759 - Oro principal */
+  --warm-orange: hsl(15, 100%, 60%);      /* Naranja */
+  --warm-pink: hsl(330, 100%, 58%);       /* Rosa */
+  --warm-magenta: hsl(340, 100%, 60%);    /* Rosa-rojo */
+  --warm-yellow: hsl(38, 100%, 65%);      /* Amarillo dorado */
+  --warm-rose: hsl(345, 100%, 62%);       /* Rosa intenso */
+
+  /* Gradientes Vibrantes - SISTEMA DORADO CÁLIDO */
+  --gradient-primary: linear-gradient(90deg, hsl(28, 100%, 68%) 0%, hsl(15, 100%, 60%) 50%, hsl(330, 100%, 58%) 100%); /* Dorado → Naranja → Rosa (horizontal) */
+  --gradient-secondary: linear-gradient(135deg, hsl(330, 100%, 58%) 0%, hsl(340, 100%, 60%) 100%); /* Rosa → Rosa-rojo */
+  --gradient-accent: linear-gradient(135deg, hsl(38, 100%, 65%) 0%, hsl(28, 100%, 68%) 100%); /* Amarillo → Dorado */
+  --gradient-warm: linear-gradient(135deg, hsl(15, 100%, 60%) 0%, hsl(28, 100%, 68%) 100%); /* Naranja → Dorado */
+  --gradient-sunset: linear-gradient(135deg, hsl(28, 100%, 68%) 0%, hsl(340, 100%, 60%) 50%, hsl(330, 100%, 58%) 100%); /* Sunset completo */
+
+  /* Gradiente de Fondo Mesh - DORADO CÁLIDO */
+  --bg-mesh:
+    radial-gradient(ellipse 120% 80% at 30% 20%, hsla(28, 100%, 68%, 0.20) 0%, transparent 60%),  /* Naranja dorado #ffb759 */
+    radial-gradient(ellipse 100% 90% at 70% 50%, hsla(330, 100%, 68%, 0.18) 0%, transparent 60%), /* Rosa vibrante */
+    radial-gradient(ellipse 80% 70% at 50% 80%, hsla(340, 100%, 70%, 0.15) 0%, transparent 60%);  /* Rosa-rojo */
+
+  /* Legacy compatibility */
+  --n8n-blue: hsl(210, 100%, 55%);
+  --n8n-purple: hsl(270, 100%, 62%);
+  --n8n-gradient: var(--gradient-primary);
+  --n8n-card-bg: var(--glass-bg-strong);
+  --n8n-border: var(--glass-border-strong);
 }
 
+/* Dark mode disabled - keeping light theme only */
 .dark {
-  --background: hsl(240, 10%, 3.9%);
-  --foreground: hsl(0, 0%, 98%);
-  --muted: hsl(240, 3.7%, 15.9%);
-  --muted-foreground: hsl(240, 5%, 64.9%);
-  --popover: hsl(240, 10%, 3.9%);
-  --popover-foreground: hsl(0, 0%, 98%);
-  --card: hsl(240, 10%, 3.9%);
-  --card-foreground: hsl(0, 0%, 98%);
-  --border: hsl(240, 3.7%, 15.9%);
-  --input: hsl(240, 3.7%, 15.9%);
-  --primary: hsl(244, 86%, 65%);
-  --primary-foreground: hsl(211, 100%, 99%);
---secondary: hsl(240, 3.7%, 15.9%);
---secondary-gradient: radial-gradient(circle at top, #2941e0, #07103c);  --secondary-foreground: hsl(0, 0%, 98%);
-  --accent: hsl(240, 3.7%, 15.9%);
-  --accent-foreground: hsl(0, 0%, 98%);
-  --destructive: hsl(0, 62.8%, 30.6%);
-  --destructive-foreground: hsl(0, 0%, 98%);
-  --ring: hsl(240, 4.9%, 83.9%);
+  --background: hsl(0, 0%, 100%);
+  --background-soft: hsl(240, 20%, 98%);
+  --foreground: hsl(240, 15%, 15%);
+  --muted: hsl(240, 15%, 96%);
+  --muted-foreground: hsl(240, 10%, 45%);
+  --popover: hsl(0, 0%, 100%);
+  --popover-foreground: hsl(240, 15%, 15%);
+  --card: hsl(0, 0%, 100%);
+  --card-foreground: hsl(240, 15%, 15%);
+  --border: hsl(240, 20%, 90%);
+  --input: hsl(240, 20%, 95%);
+  --primary: hsl(210, 100%, 50%);
+  --primary-foreground: hsl(0, 0%, 100%);
+  --secondary: hsl(240, 15%, 96%);
+  --secondary-foreground: hsl(240, 15%, 15%);
+  --accent: hsl(270, 100%, 60%);
+  --accent-foreground: hsl(0, 0%, 100%);
+  --destructive: hsl(0, 84%, 60%);
+  --destructive-foreground: hsl(0, 0%, 100%);
+  --ring: hsl(210, 100%, 50%);
 }
 
 @layer base {
@@ -78,12 +110,15 @@
   }
 
   body {
-    @apply font-sans antialiased bg-background text-foreground;
+    @apply font-sans antialiased text-foreground;
     font-family: 'Inter', sans-serif;
     position: relative;
-    min-height: 100vh;
+    background: var(--background);
+    background-image: var(--bg-mesh);
+    background-attachment: fixed;
   }
 
+  /* Mesh gradient vibrante animado - TONOS DORADOS CÁLIDOS */
   body::before {
     content: '';
     position: fixed;
@@ -93,22 +128,38 @@
     width: 100vw;
     height: 100vh;
     pointer-events: none;
-    opacity: 0.75;
+    opacity: 1;
     background:
-      radial-gradient(ellipse at 20% 10%, rgba(41,65,224,0.32) 0%, transparent 60%),
-      radial-gradient(ellipse at 80% 20%, rgba(139,92,246,0.22) 0%, transparent 70%),
-      radial-gradient(ellipse at 60% 80%, rgba(34,197,94,0.18) 0%, transparent 70%),
-      radial-gradient(ellipse at 90% 90%, rgba(59,130,246,0.18) 0%, transparent 80%);
-    transition: opacity 0.5s;
+      radial-gradient(ellipse 1000px 800px at 25% 15%, hsla(28, 100%, 68%, 0.25) 0%, transparent 65%), /* Naranja dorado (#ffb759) */
+      radial-gradient(ellipse 900px 700px at 75% 30%, hsla(330, 100%, 68%, 0.22) 0%, transparent 65%), /* Rosa vibrante */
+      radial-gradient(ellipse 800px 650px at 50% 85%, hsla(340, 100%, 70%, 0.20) 0%, transparent 65%), /* Rosa-rojo */
+      radial-gradient(ellipse 700px 600px at 85% 70%, hsla(38, 100%, 65%, 0.18) 0%, transparent 70%); /* Dorado claro */
+    filter: blur(100px);
+    animation: mesh-float 25s ease-in-out infinite;
+  }
+
+  @keyframes mesh-float {
+    0%, 100% {
+      transform: translate(0, 0) scale(1);
+      opacity: 1;
+    }
+    33% {
+      transform: translate(-30px, -20px) scale(1.05);
+      opacity: 0.9;
+    }
+    66% {
+      transform: translate(20px, 30px) scale(0.95);
+      opacity: 0.95;
+    }
   }
 
   @media (max-width: 768px) {
     body::before {
-      opacity: 0.45;
       background:
-        radial-gradient(ellipse at 30% 10%, rgba(41,65,224,0.18) 0%, transparent 60%),
-        radial-gradient(ellipse at 80% 30%, rgba(139,92,246,0.15) 0%, transparent 70%),
-        radial-gradient(ellipse at 60% 90%, rgba(34,197,94,0.12) 0%, transparent 70%);
+        radial-gradient(ellipse 700px 500px at 30% 15%, hsla(28, 100%, 68%, 0.22) 0%, transparent 60%), /* Naranja dorado */
+        radial-gradient(ellipse 650px 450px at 75% 30%, hsla(330, 100%, 68%, 0.20) 0%, transparent 60%), /* Rosa */
+        radial-gradient(ellipse 600px 400px at 50% 85%, hsla(340, 100%, 70%, 0.18) 0%, transparent 60%); /* Rosa-rojo */
+      filter: blur(80px);
     }
   }
 
@@ -176,18 +227,19 @@
   pointer-events: none;
 }
 
-/* Infinite logo slider animation */
+/* Infinite logo slider animation - MÁS FLUIDA */
 @keyframes slide {
-  from {
+  0% {
     transform: translateX(0);
   }
-  to {
-    transform: translateX(calc(-200px * 5)); /* Width of one set of logos */
+  100% {
+    transform: translateX(calc(-200px * 8)); /* Width of one set of logos */
   }
 }
 
 .animate-slide {
-  animation: slide 20s linear infinite;
+  animation: slide 40s linear infinite; /* Más lenta y suave */
+  will-change: transform; /* Optimización de rendimiento */
 }
 
 .animate-slide:hover {
@@ -203,34 +255,87 @@
   }
 
   .hero-button {
-    background: var(--n8n-gradient);
-    border: 1px solid transparent;
-    transition: all 0.3s ease;
+    background: var(--gradient-primary);
+    border: none; /* Sin borde para evitar el "sangrado" del gradiente */
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     position: relative;
-    overflow: hidden;
-    border-radius: 8px;
-    font-weight: 600;
+    overflow: hidden; /* Evita que el efecto de brillo se vea fuera del botón */
+    border-radius: 14px;
+    font-weight: 700;
+    letter-spacing: 0.3px;
+    background-clip: padding-box; /* Clip del gradiente al padding-box */
+    box-shadow:
+      0 8px 30px hsla(210, 100%, 55%, 0.35),
+      0 4px 15px hsla(270, 100%, 62%, 0.25),
+      inset 0 1px 1px hsla(0, 0%, 100%, 0.3);
+  }
+
+  .hero-button::after {
+    content: '';
+    position: absolute;
+    inset: -4px;
+    background: var(--gradient-primary);
+    border-radius: inherit;
+    opacity: 0;
+    filter: blur(25px);
+    transition: opacity 0.3s ease;
+    z-index: -1;
   }
 
   .hero-button:hover {
-    background: linear-gradient(135deg, hsl(270, 100%, 60%), hsl(210, 100%, 50%));
-    transform: translateY(-2px);
-    box-shadow: 0 10px 25px hsla(210, 100%, 50%, 0.3);
+    background: linear-gradient(90deg, hsl(330, 100%, 58%) 0%, hsl(15, 100%, 60%) 50%, hsl(28, 100%, 68%) 100%); /* Rosa → Naranja → Dorado */
+    transform: translateY(-3px) scale(1.02);
+    box-shadow:
+      0 15px 50px hsla(15, 100%, 60%, 0.45),    /* Naranja */
+      0 8px 25px hsla(330, 100%, 58%, 0.35),    /* Rosa */
+      0 0 80px hsla(45, 100%, 55%, 0.25),       /* Amarillo glow */
+      inset 0 1px 2px hsla(0, 0%, 100%, 0.4);
+  }
+
+  .hero-button:hover::after {
+    opacity: 0.7;
   }
 
   .hero-button::before {
     content: '';
     position: absolute;
     top: 0;
-    left: -100%;
-    width: 100%;
+    left: -150%;
+    width: 50%;
     height: 100%;
-    background: linear-gradient(90deg, transparent, hsla(0, 0%, 100%, 0.2), transparent);
-    transition: left 0.5s;
+    background: linear-gradient(90deg, transparent 0%, hsla(0, 0%, 100%, 0.4) 50%, transparent 100%);
+    transition: left 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    /* El gradiente comienza completamente fuera del botón */
   }
 
   .hero-button:hover::before {
-    left: 100%;
+    left: 150%;
+  }
+
+  /* Glow effect utility class - CÁLIDO */
+  .glow-on-hover {
+    position: relative;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .glow-on-hover::after {
+    content: '';
+    position: absolute;
+    inset: -5px;
+    background: var(--gradient-primary); /* Naranja → Rosa */
+    border-radius: inherit;
+    opacity: 0;
+    filter: blur(30px);
+    transition: opacity 0.4s ease;
+    z-index: -1;
+  }
+
+  .glow-on-hover:hover {
+    transform: translateY(-2px);
+  }
+
+  .glow-on-hover:hover::after {
+    opacity: 0.7;
   }
 
   .service-card {
@@ -243,10 +348,12 @@
   }
 
   .service-card:hover {
-    background: hsl(240, 10%, 8%);
-    border-color: hsl(210, 100%, 50%);
+    background: var(--glass-bg-strong);
+    border-color: hsl(28, 100%, 68%); /* Dorado cálido #ffb759 */
     transform: translateY(-5px);
-    box-shadow: 0 20px 40px hsla(0, 0%, 0%, 0.3);
+    box-shadow:
+      0 20px 40px hsla(28, 100%, 68%, 0.15),
+      0 10px 20px hsla(330, 100%, 58%, 0.1);
   }
 
   .stats-counter {
@@ -261,7 +368,7 @@
   .connection-line {
     position: absolute;
     height: 1px;
-    background: linear-gradient(90deg, transparent, hsl(210, 100%, 50%), transparent);
+    background: linear-gradient(90deg, transparent, hsl(28, 100%, 68%), transparent); /* Dorado cálido #ffb759 */
     animation: pulse 4s ease-in-out infinite;
   }
 
@@ -269,9 +376,9 @@
     position: absolute;
     width: 8px;
     height: 8px;
-    background: hsl(210, 100%, 50%);
+    background: hsl(28, 100%, 68%); /* Dorado cálido #ffb759 */
     border-radius: 50%;
-    box-shadow: 0 0 20px hsl(210, 100%, 50%);
+    box-shadow: 0 0 20px hsl(28, 100%, 68%);
     animation: pulse 3s ease-in-out infinite;
   }
 
@@ -287,31 +394,70 @@
     animation: float 20s ease-in-out infinite;
   }
 
-  /* Nuevos estilos inspirados en n8n.io */
+  /* Glass Card - Glassmorphism VIBRANTE */
   .n8n-card {
-    background: var(--n8n-card-bg);
-    border: 1px solid var(--n8n-border);
-    border-radius: 12px;
-    transition: all 0.3s ease;
+    background: var(--glass-bg-strong);
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    border: 1.5px solid var(--glass-border-strong);
+    border-radius: 20px;
+    box-shadow:
+      0 8px 32px var(--glass-shadow),
+      0 1px 2px hsla(240, 50%, 60%, 0.1),
+      inset 0 1px 1px hsla(0, 0%, 100%, 1),
+      inset 0 -1px 1px hsla(240, 40%, 90%, 0.5);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+  }
+
+  .n8n-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    padding: 1.5px;
+    background: linear-gradient(135deg,
+      hsla(15, 100%, 65%, 0.6),      /* Naranja */
+      hsla(330, 100%, 65%, 0.5),     /* Rosa */
+      hsla(280, 100%, 70%, 0.3),     /* Púrpura */
+      hsla(45, 100%, 65%, 0.4));     /* Amarillo */
+    -webkit-mask:
+      linear-gradient(#fff 0 0) content-box,
+      linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    opacity: 0;
+    transition: opacity 0.4s ease;
   }
 
   .n8n-card:hover {
-    border-color: hsl(210, 100%, 50%);
-    transform: translateY(-2px);
-    box-shadow: 0 8px 25px hsla(210, 100%, 50%, 0.1);
+    transform: translateY(-8px) scale(1.02);
+    box-shadow:
+      0 24px 70px hsla(15, 100%, 60%, 0.22),    /* Naranja */
+      0 12px 35px hsla(330, 100%, 58%, 0.18),   /* Rosa */
+      0 6px 20px hsla(45, 100%, 55%, 0.12),     /* Amarillo */
+      inset 0 1px 2px hsla(0, 0%, 100%, 1);
+    border-color: hsla(330, 100%, 65%, 0.7);    /* Rosa */
+  }
+
+  .n8n-card:hover::before {
+    opacity: 1;
   }
 
   .n8n-gradient-bg {
-    background: var(--n8n-gradient);
+    background: var(--gradient-primary);
+    box-shadow: 0 4px 20px hsla(15, 100%, 60%, 0.3);
   }
 
   .n8n-text-gradient {
     font-family:"Inter", system-ui, -apple-system, sans-serif;
-    background: var(--n8n-gradient);
+    background: var(--gradient-primary);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
     letter-spacing: 0.5px;
+    font-weight: 800;
+    position: relative;
   }
 
   /* Efecto de luces de colores inspirado en n8n.io */
@@ -386,18 +532,18 @@
   content: "";
   position: absolute;
   top: 0;
-  width: 60px;
+  width: 100px; /* Gradiente más amplio para suavidad */
   height: 100%;
   z-index: 2;
   pointer-events: none;
 }
 .logo-slide-effect::before {
   left: 0;
-  background: linear-gradient(90deg, rgba(41,65,224,0.18) 0%, transparent 100%);
+  background: linear-gradient(90deg, hsla(28, 100%, 68%, 0.25) 0%, transparent 100%); /* Naranja dorado cálido */
 }
 .logo-slide-effect::after {
   right: 0;
-  background: linear-gradient(270deg, rgba(41,65,224,0.18) 0%, transparent 100%);
+  background: linear-gradient(270deg, hsla(330, 100%, 68%, 0.25) 0%, transparent 100%); /* Rosa cálido */
 }
 .logo-slide-light {
   position: absolute;
