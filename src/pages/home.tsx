@@ -5,7 +5,7 @@ import IndustriesSection from "@/components/industries-section";
 import GoogleGrantsSection from "@/components/google-grants-section";
 import ServicesSection from "@/components/services-section";
 import AISolutionsSection from "@/components/ai-solutions-section";
-import CaseStudiesSection from "@/components/case-studies-section";
+// import CaseStudiesSection from "@/components/case-studies-section";
 import TeamSection from "@/components/team-section";
 import ContactSection from "@/components/contact-section";
 import Footer from "@/components/footer";
@@ -24,7 +24,7 @@ export default function Home() {
       <GoogleGrantsSection />
       <ServicesSection />
       <AISolutionsSection />
-      <CaseStudiesSection />
+      {/* <CaseStudiesSection /> */}
       <TeamSection />
       <ContactSection />
       <Footer />

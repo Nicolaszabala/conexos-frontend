@@ -96,12 +96,12 @@ export default function Navigation() {
               >
                 Industrias
               </button>
-              <button
+              {/* <button
                 onClick={() => handleNavigation("casos")}
                 className="text-muted-foreground hover:text-foreground transition-colors"
               >
                 Casos de Éxito
-              </button>
+              </button> */}
 
               <a href="#contacto">
                 <Button className="hero-button px-6 py-2">
@@ -144,12 +144,12 @@ export default function Navigation() {
                 >
                   Soluciones IA
                 </button>
-                <button
+                {/* <button
                   onClick={() => handleNavigation("casos")}
                   className="block w-full text-left text-muted-foreground hover:text-foreground transition-colors"
                 >
                   Casos de Éxito
-                </button>
+                </button> */}
                 <button
                   onClick={() => handleNavigation("equipo")}
                   className="block w-full text-left text-muted-foreground hover:text-foreground transition-colors"
