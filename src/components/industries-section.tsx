@@ -10,8 +10,8 @@ const industries = [
     painPoint: "Pérdida de donantes por sistemas desconectados",
     solution: "Google Ad Grants ($120K/año gratis) + automatizaciones de captación",
     metric: "45% aumento en donantes recurrentes",
-    gradient: "from-pink-500 to-rose-500",
-    iconBg: "bg-gradient-to-br from-pink-500 to-rose-500",
+    gradient: "from-[#fcba03] to-[#fc3d03]",
+    iconBg: "bg-gradient-to-br from-[#fcba03] to-[#fc3d03]",
   },
   {
     icon: ShoppingBag,
@@ -37,8 +37,8 @@ const industries = [
     painPoint: "Agendamiento manual y alta tasa de no-shows",
     solution: "Sistema de citas automatizado + recordatorios inteligentes",
     metric: "50% reducción en no-shows",
-    gradient: "from-rose-500 to-pink-500",
-    iconBg: "bg-gradient-to-br from-rose-500 to-pink-500",
+    gradient: "from-[#fc3d03] to-[#fcba03]",
+    iconBg: "bg-gradient-to-br from-[#fc3d03] to-[#fcba03]",
   },
 ];
 
@@ -47,9 +47,9 @@ export default function IndustriesSection() {
 
   return (
     <section id="industrias" className="py-20 bg-background relative overflow-hidden">
-      {/* Decorative gradient orbs - TONOS CÁLIDOS */}
-      <div className="absolute top-20 left-10 w-72 h-72 bg-orange-400/10 rounded-full blur-3xl" />
-      <div className="absolute bottom-20 right-10 w-96 h-96 bg-pink-400/10 rounded-full blur-3xl" />
+      {/* Decorative gradient orbs - TONOS CÁLIDOS ACTUALIZADOS */}
+      <div className="absolute top-20 left-10 w-72 h-72 rounded-full blur-3xl" style={{backgroundColor: 'rgba(252, 186, 3, 0.1)'}} />
+      <div className="absolute bottom-20 right-10 w-96 h-96 rounded-full blur-3xl" style={{backgroundColor: 'rgba(252, 61, 3, 0.1)'}} />
 
       <div className="container mx-auto px-12 relative z-10">
         <motion.div

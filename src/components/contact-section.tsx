@@ -56,9 +56,9 @@ export default function ContactSection() {
 
   return (
     <section id="contacto" className="py-20 bg-background relative overflow-hidden">
-      {/* Decorative gradients - TONOS CÁLIDOS */}
-      <div className="absolute top-20 left-10 w-96 h-96 bg-pink-400/10 rounded-full blur-3xl" />
-      <div className="absolute bottom-20 right-10 w-80 h-80 bg-orange-400/10 rounded-full blur-3xl" />
+      {/* Decorative gradients - TONOS CÁLIDOS ACTUALIZADOS */}
+      <div className="absolute top-20 left-10 w-96 h-96 rounded-full blur-3xl" style={{backgroundColor: 'rgba(252, 61, 3, 0.1)'}} />
+      <div className="absolute bottom-20 right-10 w-80 h-80 rounded-full blur-3xl" style={{backgroundColor: 'rgba(252, 186, 3, 0.1)'}} />
 
       <div className="container mx-auto px-6 relative z-10">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
@@ -86,11 +86,11 @@ export default function ContactSection() {
                   animate={isVisible ? { opacity: 1, y: 0 } : {}}
                   transition={{ duration: 0.6, delay: index * 0.1 }}
                 >
-                  <div className={`w-12 h-12 rounded-lg flex items-center justify-center ${
-                    index === 0 ? 'bg-gradient-to-br from-orange-500 to-pink-500' : // Teléfono
-                    index === 1 ? 'bg-gradient-to-br from-pink-500 to-rose-500' : // Email
-                    'bg-gradient-to-br from-yellow-500 to-orange-500' // Oficina
-                  }`}>
+                  <div className="w-12 h-12 rounded-lg flex items-center justify-center" style={{
+                    background: index === 0 ? 'linear-gradient(to bottom right, #fcba03, #fc3d03)' : // Teléfono
+                                index === 1 ? 'linear-gradient(to bottom right, #fc3d03, #fcba03)' : // Email
+                                'linear-gradient(to bottom right, #fcba03, #fc3d03)' // Oficina
+                  }}>
                     <info.icon className="text-white" />
                   </div>
                   <div>

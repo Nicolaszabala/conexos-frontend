@@ -56,7 +56,7 @@ export default function Footer() {
                 href="tel:+34634443713"
                 className="flex items-center gap-3 text-foreground hover:text-primary transition-colors group"
               >
-                <div className="w-9 h-9 rounded-lg bg-gradient-to-br from-orange-500 to-pink-500 flex items-center justify-center group-hover:scale-110 transition-transform">
+                <div className="w-9 h-9 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform" style={{background: 'linear-gradient(to bottom right, #fcba03, #fc3d03)'}}>
                   <Phone className="w-4 h-4 text-white" />
                 </div>
                 <span className="font-medium">+34 634 443 713</span>
@@ -66,7 +66,7 @@ export default function Footer() {
                 href="mailto:info@conexos.es"
                 className="flex items-center gap-3 text-foreground hover:text-primary transition-colors group"
               >
-                <div className="w-9 h-9 rounded-lg bg-gradient-to-br from-pink-500 to-purple-500 flex items-center justify-center group-hover:scale-110 transition-transform">
+                <div className="w-9 h-9 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform" style={{background: 'linear-gradient(to bottom right, #fc3d03, #fcba03)'}}>
                   <Mail className="w-4 h-4 text-white" />
                 </div>
                 <span className="font-medium">info@conexos.es</span>

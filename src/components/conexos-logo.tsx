@@ -21,10 +21,10 @@ export default function ConexosLogo({
       className={className}
     >
       <defs>
-        {/* Gradiente Naranja → Rosa */}
+        {/* Gradiente Amarillo dorado → Naranja rojizo */}
         <linearGradient id={gradientId} x1="0%" y1="0%" x2="100%" y2="100%">
-          <stop offset="0%" stopColor="hsl(15, 100%, 60%)" />
-          <stop offset="100%" stopColor="hsl(330, 100%, 58%)" />
+          <stop offset="0%" stopColor="#fcba03" />
+          <stop offset="100%" stopColor="#fc3d03" />
         </linearGradient>
 
         {/* Filtro de glow */}

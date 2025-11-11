@@ -34,9 +34,9 @@ export default function GoogleGrantsSection() {
 
   return (
     <section id="google-grants" className="py-24 bg-background relative overflow-hidden">
-      {/* Background decorative elements */}
-      <div className="absolute top-20 right-10 w-96 h-96 bg-gradient-to-br from-orange-400/10 to-pink-400/10 rounded-full blur-3xl" />
-      <div className="absolute bottom-20 left-10 w-80 h-80 bg-gradient-to-br from-yellow-400/10 to-orange-400/10 rounded-full blur-3xl" />
+      {/* Background decorative elements - TONOS CÁLIDOS ACTUALIZADOS */}
+      <div className="absolute top-20 right-10 w-96 h-96 rounded-full blur-3xl" style={{background: 'linear-gradient(to bottom right, rgba(252, 186, 3, 0.1), rgba(252, 61, 3, 0.1))'}} />
+      <div className="absolute bottom-20 left-10 w-80 h-80 rounded-full blur-3xl" style={{background: 'linear-gradient(to bottom right, rgba(252, 186, 3, 0.1), rgba(252, 61, 3, 0.1))'}} />
 
       <div className="container mx-auto px-12 relative z-10" ref={ref}>
         {/* Header Section */}
@@ -46,8 +46,8 @@ export default function GoogleGrantsSection() {
           animate={isVisible ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
         >
-          <div className="inline-flex items-center gap-3 mb-6 px-6 py-3 rounded-full bg-gradient-to-r from-orange-500/10 to-pink-500/10 border border-orange-500/20">
-            <span className="text-sm font-semibold text-orange-600">Programa Exclusivo para ONGs</span>
+          <div className="inline-flex items-center gap-3 mb-6 px-6 py-3 rounded-full border" style={{background: 'linear-gradient(to right, rgba(252, 186, 3, 0.1), rgba(252, 61, 3, 0.1))', borderColor: 'rgba(252, 186, 3, 0.2)'}}>
+            <span className="text-sm font-semibold" style={{color: '#fc3d03'}}>Programa Exclusivo para ONGs</span>
           </div>
 
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
@@ -89,7 +89,7 @@ export default function GoogleGrantsSection() {
                   </div>
                 </div>
                 {/* Glow effect */}
-                <div className="absolute inset-0 -z-10 bg-gradient-to-r from-orange-500/20 to-pink-500/20 blur-2xl scale-110" />
+                <div className="absolute inset-0 -z-10 blur-2xl scale-110" style={{background: 'linear-gradient(to right, rgba(252, 186, 3, 0.2), rgba(252, 61, 3, 0.2))'}} />
               </div>
             </div>
 
@@ -103,7 +103,7 @@ export default function GoogleGrantsSection() {
                   animate={isVisible ? { opacity: 1, y: 0 } : {}}
                   transition={{ duration: 0.6, delay: 0.3 + index * 0.1 }}
                 >
-                  <div className="w-16 h-16 mx-auto mb-4 rounded-2xl bg-gradient-to-br from-orange-500 to-pink-500 flex items-center justify-center">
+                  <div className="w-16 h-16 mx-auto mb-4 rounded-2xl flex items-center justify-center" style={{background: 'linear-gradient(to bottom right, #fcba03, #fc3d03)'}}>
                     <benefit.icon className="w-8 h-8 text-white" />
                   </div>
                   <h3 className="text-lg font-bold mb-2">{benefit.title}</h3>
@@ -113,7 +113,7 @@ export default function GoogleGrantsSection() {
             </div>
 
             {/* Process Steps */}
-            <div className="bg-gradient-to-br from-orange-500/5 to-pink-500/5 rounded-2xl p-8 border border-orange-500/10">
+            <div className="rounded-2xl p-8 border" style={{background: 'linear-gradient(to bottom right, rgba(252, 186, 3, 0.05), rgba(252, 61, 3, 0.05))', borderColor: 'rgba(252, 186, 3, 0.1)'}}>
               <h3 className="text-2xl font-bold mb-6 text-center">
                 Cómo Gestionamos tu Google Ad Grants
               </h3>
@@ -126,7 +126,7 @@ export default function GoogleGrantsSection() {
                     animate={isVisible ? { opacity: 1, x: 0 } : {}}
                     transition={{ duration: 0.4, delay: 0.5 + index * 0.1 }}
                   >
-                    <div className="flex-shrink-0 w-8 h-8 rounded-full bg-gradient-to-br from-orange-500 to-pink-500 flex items-center justify-center text-white font-bold text-sm">
+                    <div className="flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center text-white font-bold text-sm" style={{background: 'linear-gradient(to bottom right, #fcba03, #fc3d03)'}}>
                       {index + 1}
                     </div>
                     <div className="flex-1 pt-1">
