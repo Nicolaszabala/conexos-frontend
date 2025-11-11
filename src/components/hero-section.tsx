@@ -64,8 +64,8 @@ export default function HeroSection() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            <strong className="text-foreground">Desarrollo Web + Marketing Digital + Automatización con IA</strong>.
-            Un equipo completo de ingenieros, diseñadores y estrategas digitales trabajando para tu crecimiento.
+            <strong className="text-foreground">Desarrollo Web - Marketing Digital - Automatización con IA</strong>
+            <br />Un equipo completo de ingenieros, diseñadores y estrategas digitales trabajando para tu crecimiento.
             <br />
             <span className="text-lg mt-2 inline-block">Especialistas en ONGs, e-commerce, educación y salud.</span>
           </motion.p>

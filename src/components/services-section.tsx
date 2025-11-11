@@ -9,42 +9,42 @@ const services = [
     title: "Marketing Digital Integral",
     description: "Estrategias 360° que incluyen SEO, SEM, redes sociales y content marketing optimizadas con IA para maximizar conversiones.",
     features: ["Auditoría digital completa", "Estrategia personalizada", "Reporting en tiempo real"],
-    image: "https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=400"
+    image: "/fonts/socialmedia.jpg"
   },
   {
     icon: Bot,
     title: "Automatización con IA",
     description: "Implementamos chatbots inteligentes, automatización de procesos y sistemas de IA para optimizar la generación y cualificación de leads.",
     features: ["Chatbots conversacionales", "Lead scoring automático", "Personalización dinámica"],
-    image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=400"
+    image: "/fonts/n8n.webp"
   },
   {
     icon: Target,
     title: "Generación de Leads",
     description: "Sistemas avanzados de captura y nurturing que convierten visitantes en clientes potenciales de alta calidad mediante IA predictiva.",
     features: ["Landing pages optimizadas", "Email marketing inteligente", "Segmentación avanzada"],
-    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=400"
+    image: "/fonts/salesfunnel.png"
   },
   {
     icon: TrendingUp,
     title: "Analytics Avanzados",
     description: "Dashboards personalizados con IA que proporcionan insights profundos sobre el comportamiento del cliente y optimización de campañas.",
     features: ["KPIs en tiempo real", "Predicción de tendencias", "Reportes automatizados"],
-    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=400"
+    image: "/fonts/analytics.jpg"
   },
   {
     icon: PenTool,
     title: "Contenido Inteligente",
     description: "Creación de contenido optimizado con IA que resuena con tu audiencia y mejora el posicionamiento orgánico de tu marca.",
     features: ["Copywriting con IA", "Optimización SEO", "Distribución multicanal"],
-    image: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=400"
+    image: "/fonts/smartcontent.webp"
   },
   {
     icon: Settings,
     title: "CRM Inteligente",
     description: "Implementación y optimización de CRM con IA para automatizar el seguimiento de leads y maximizar las conversiones de ventas.",
     features: ["Integración completa", "Workflows automáticos", "Scoring predictivo"],
-    image: "https://images.unsplash.com/photo-1559136555-9303baea8ebd?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=400"
+    image: "/fonts/hubspot.png"
   }
 ];
 
