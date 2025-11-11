@@ -28,9 +28,9 @@ export default function TeamSection() {
 
   return (
     <section id="equipo" className="py-20 bg-background relative overflow-hidden">
-      {/* Decorative gradients */}
-      <div className="absolute top-20 right-10 w-96 h-96 bg-pink-400/10 rounded-full blur-3xl" />
-      <div className="absolute bottom-20 left-10 w-80 h-80 bg-purple-400/10 rounded-full blur-3xl" />
+      {/* Decorative gradients - TONOS CÁLIDOS ACTUALIZADOS */}
+      <div className="absolute top-20 right-10 w-96 h-96 rounded-full blur-3xl" style={{backgroundColor: 'rgba(252, 61, 3, 0.1)'}} />
+      <div className="absolute bottom-20 left-10 w-80 h-80 rounded-full blur-3xl" style={{backgroundColor: 'rgba(252, 186, 3, 0.1)'}} />
 
       <div className="container mx-auto px-12 relative z-10">
         <motion.div

@@ -24,13 +24,13 @@ export default function HeroParticlesAnimation() {
   const connectionsRef = useRef<Connection[]>([]);
   const mouseRef = useRef({ x: 0, y: 0, isHovering: false });
 
-  // Paleta dorada cálida - con #ffb759
+  // Paleta cálida actualizada - #fcba03 a #fc3d03
   const colors = [
-    "rgb(255, 183, 89)",   // #ffb759 - Naranja dorado (color principal)
-    "rgb(255, 140, 66)",   // Naranja más vibrante
-    "rgb(236, 72, 153)",   // Rosa/Magenta
-    "rgb(251, 191, 36)",   // Amarillo dorado
-    "rgb(244, 63, 94)",    // Rosa rojizo
+    "rgb(252, 186, 3)",    // #fcba03 - Amarillo dorado
+    "rgb(252, 61, 3)",     // #fc3d03 - Naranja rojizo
+    "rgb(252, 100, 3)",    // Tono intermedio
+    "rgb(252, 140, 3)",    // Tono intermedio
+    "rgb(252, 80, 3)",     // Variación de naranja
   ];
 
   useEffect(() => {
@@ -223,12 +223,15 @@ export default function HeroParticlesAnimation() {
         style={{ opacity: 0.85 }}
       />
 
-      {/* Gradiente de fondo sutil - TONOS DORADOS CÁLIDOS */}
-      <div className="absolute inset-0 bg-gradient-to-br from-orange-400/5 via-pink-400/3 to-yellow-400/5 pointer-events-none" />
+      {/* Gradiente de fondo sutil - TONOS CÁLIDOS ACTUALIZADOS */}
+      <div className="absolute inset-0 pointer-events-none" style={{
+        background: 'linear-gradient(to bottom right, rgba(252, 186, 3, 0.05), rgba(252, 61, 3, 0.03), rgba(252, 186, 3, 0.05))'
+      }} />
 
-      {/* Highlights decorativos - TONOS DORADOS CÁLIDOS */}
+      {/* Highlights decorativos - TONOS CÁLIDOS ACTUALIZADOS */}
       <motion.div
-        className="absolute top-1/4 left-1/4 w-32 h-32 bg-orange-400/10 rounded-full blur-3xl"
+        className="absolute top-1/4 left-1/4 w-32 h-32 rounded-full blur-3xl"
+        style={{ backgroundColor: 'rgba(252, 186, 3, 0.1)' }}
         animate={{
           scale: [1, 1.2, 1],
           opacity: [0.3, 0.5, 0.3],
@@ -240,7 +243,8 @@ export default function HeroParticlesAnimation() {
         }}
       />
       <motion.div
-        className="absolute bottom-1/3 right-1/4 w-40 h-40 bg-pink-400/10 rounded-full blur-3xl"
+        className="absolute bottom-1/3 right-1/4 w-40 h-40 rounded-full blur-3xl"
+        style={{ backgroundColor: 'rgba(252, 61, 3, 0.1)' }}
         animate={{
           scale: [1, 1.3, 1],
           opacity: [0.2, 0.4, 0.2],

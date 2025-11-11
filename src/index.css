@@ -14,16 +14,16 @@
   /* Fondos - GRADIENTE SUAVE VIBRANTE */
   --background: hsl(220, 30%, 97%);
   --background-gradient: linear-gradient(180deg, hsl(220, 40%, 98%) 0%, hsl(240, 35%, 96%) 100%);
-  --foreground: hsl(240, 25%, 8%); /* Negro casi puro para contraste fuerte */
+  --foreground: #2e2c28; /* Negro cálido para títulos */
 
   --muted: hsl(240, 20%, 94%);
   --muted-foreground: hsl(240, 15%, 35%); /* Más oscuro para mejor legibilidad */
 
   --popover: hsla(0, 0%, 100%, 0.95);
-  --popover-foreground: hsl(240, 25%, 8%);
+  --popover-foreground: #2e2c28;
 
   --card: hsla(0, 0%, 100%, 0.9);
-  --card-foreground: hsl(240, 25%, 8%);
+  --card-foreground: #2e2c28;
 
   --border: hsl(240, 30%, 85%);
   --input: hsl(240, 25%, 92%);
@@ -32,7 +32,7 @@
   --primary-foreground: hsl(0, 0%, 100%);
 
   --secondary: hsl(240, 20%, 94%);
-  --secondary-foreground: hsl(240, 25%, 8%);
+  --secondary-foreground: #2e2c28;
 
   --accent: hsl(270, 100%, 62%);
   --accent-foreground: hsl(0, 0%, 100%);
@@ -51,26 +51,26 @@
   --glass-shadow: hsla(240, 50%, 30%, 0.15);
   --glass-shadow-strong: hsla(240, 50%, 20%, 0.25);
 
-  /* Acentos de Color - TONOS DORADOS CÁLIDOS */
-  --warm-gold: hsl(28, 100%, 68%);        /* #ffb759 - Oro principal */
-  --warm-orange: hsl(15, 100%, 60%);      /* Naranja */
-  --warm-pink: hsl(330, 100%, 58%);       /* Rosa */
-  --warm-magenta: hsl(340, 100%, 60%);    /* Rosa-rojo */
-  --warm-yellow: hsl(38, 100%, 65%);      /* Amarillo dorado */
-  --warm-rose: hsl(345, 100%, 62%);       /* Rosa intenso */
+  /* Acentos de Color - TONOS CÁLIDOS ACTUALIZADOS */
+  --warm-gold: #fcba03;                   /* Amarillo dorado principal */
+  --warm-orange: #fc3d03;                 /* Naranja rojizo */
+  --warm-pink: #fc3d03;                   /* Naranja rojizo (reemplazo de rosa) */
+  --warm-magenta: #fc3d03;                /* Naranja rojizo (reemplazo de rosa-rojo) */
+  --warm-yellow: #fcba03;                 /* Amarillo dorado */
+  --warm-rose: #fc3d03;                   /* Naranja rojizo (reemplazo de rosa intenso) */
 
-  /* Gradientes Vibrantes - SISTEMA DORADO CÁLIDO */
-  --gradient-primary: linear-gradient(90deg, hsl(28, 100%, 68%) 0%, hsl(15, 100%, 60%) 50%, hsl(330, 100%, 58%) 100%); /* Dorado → Naranja → Rosa (horizontal) */
-  --gradient-secondary: linear-gradient(135deg, hsl(330, 100%, 58%) 0%, hsl(340, 100%, 60%) 100%); /* Rosa → Rosa-rojo */
-  --gradient-accent: linear-gradient(135deg, hsl(38, 100%, 65%) 0%, hsl(28, 100%, 68%) 100%); /* Amarillo → Dorado */
-  --gradient-warm: linear-gradient(135deg, hsl(15, 100%, 60%) 0%, hsl(28, 100%, 68%) 100%); /* Naranja → Dorado */
-  --gradient-sunset: linear-gradient(135deg, hsl(28, 100%, 68%) 0%, hsl(340, 100%, 60%) 50%, hsl(330, 100%, 58%) 100%); /* Sunset completo */
+  /* Gradientes Vibrantes - SISTEMA NARANJA CÁLIDO */
+  --gradient-primary: linear-gradient(90deg, #fcba03 0%, #fc3d03 100%); /* Amarillo dorado → Naranja rojizo */
+  --gradient-secondary: linear-gradient(135deg, #fcba03 0%, #fc3d03 100%); /* Amarillo dorado → Naranja rojizo */
+  --gradient-accent: linear-gradient(135deg, #fcba03 0%, #fc3d03 100%); /* Amarillo dorado → Naranja rojizo */
+  --gradient-warm: linear-gradient(135deg, #fcba03 0%, #fc3d03 100%); /* Amarillo dorado → Naranja rojizo */
+  --gradient-sunset: linear-gradient(135deg, #fcba03 0%, #fc3d03 100%); /* Amarillo dorado → Naranja rojizo */
 
-  /* Gradiente de Fondo Mesh - DORADO CÁLIDO */
+  /* Gradiente de Fondo Mesh - NARANJA CÁLIDO */
   --bg-mesh:
-    radial-gradient(ellipse 120% 80% at 30% 20%, hsla(28, 100%, 68%, 0.20) 0%, transparent 60%),  /* Naranja dorado #ffb759 */
-    radial-gradient(ellipse 100% 90% at 70% 50%, hsla(330, 100%, 68%, 0.18) 0%, transparent 60%), /* Rosa vibrante */
-    radial-gradient(ellipse 80% 70% at 50% 80%, hsla(340, 100%, 70%, 0.15) 0%, transparent 60%);  /* Rosa-rojo */
+    radial-gradient(ellipse 120% 80% at 30% 20%, rgba(252, 186, 3, 0.20) 0%, transparent 60%),  /* Amarillo dorado #fcba03 */
+    radial-gradient(ellipse 100% 90% at 70% 50%, rgba(252, 61, 3, 0.18) 0%, transparent 60%), /* Naranja rojizo #fc3d03 */
+    radial-gradient(ellipse 80% 70% at 50% 80%, rgba(252, 61, 3, 0.15) 0%, transparent 60%);  /* Naranja rojizo #fc3d03 */
 
   /* Legacy compatibility */
   --n8n-blue: hsl(210, 100%, 55%);
@@ -118,7 +118,7 @@
     background-attachment: fixed;
   }
 
-  /* Mesh gradient vibrante animado - TONOS DORADOS CÁLIDOS */
+  /* Mesh gradient vibrante animado - NARANJA CÁLIDO */
   body::before {
     content: '';
     position: fixed;
@@ -130,10 +130,10 @@
     pointer-events: none;
     opacity: 1;
     background:
-      radial-gradient(ellipse 1000px 800px at 25% 15%, hsla(28, 100%, 68%, 0.25) 0%, transparent 65%), /* Naranja dorado (#ffb759) */
-      radial-gradient(ellipse 900px 700px at 75% 30%, hsla(330, 100%, 68%, 0.22) 0%, transparent 65%), /* Rosa vibrante */
-      radial-gradient(ellipse 800px 650px at 50% 85%, hsla(340, 100%, 70%, 0.20) 0%, transparent 65%), /* Rosa-rojo */
-      radial-gradient(ellipse 700px 600px at 85% 70%, hsla(38, 100%, 65%, 0.18) 0%, transparent 70%); /* Dorado claro */
+      radial-gradient(ellipse 1000px 800px at 25% 15%, rgba(252, 186, 3, 0.25) 0%, transparent 65%), /* Amarillo dorado #fcba03 */
+      radial-gradient(ellipse 900px 700px at 75% 30%, rgba(252, 61, 3, 0.22) 0%, transparent 65%), /* Naranja rojizo #fc3d03 */
+      radial-gradient(ellipse 800px 650px at 50% 85%, rgba(252, 61, 3, 0.20) 0%, transparent 65%), /* Naranja rojizo #fc3d03 */
+      radial-gradient(ellipse 700px 600px at 85% 70%, rgba(252, 186, 3, 0.18) 0%, transparent 70%); /* Amarillo dorado #fcba03 */
     filter: blur(100px);
     animation: mesh-float 25s ease-in-out infinite;
   }
@@ -156,9 +156,9 @@
   @media (max-width: 768px) {
     body::before {
       background:
-        radial-gradient(ellipse 700px 500px at 30% 15%, hsla(28, 100%, 68%, 0.22) 0%, transparent 60%), /* Naranja dorado */
-        radial-gradient(ellipse 650px 450px at 75% 30%, hsla(330, 100%, 68%, 0.20) 0%, transparent 60%), /* Rosa */
-        radial-gradient(ellipse 600px 400px at 50% 85%, hsla(340, 100%, 70%, 0.18) 0%, transparent 60%); /* Rosa-rojo */
+        radial-gradient(ellipse 700px 500px at 30% 15%, rgba(252, 186, 3, 0.22) 0%, transparent 60%), /* Amarillo dorado #fcba03 */
+        radial-gradient(ellipse 650px 450px at 75% 30%, rgba(252, 61, 3, 0.20) 0%, transparent 60%), /* Naranja rojizo #fc3d03 */
+        radial-gradient(ellipse 600px 400px at 50% 85%, rgba(252, 61, 3, 0.18) 0%, transparent 60%); /* Naranja rojizo #fc3d03 */
       filter: blur(80px);
     }
   }
@@ -283,12 +283,12 @@
   }
 
   .hero-button:hover {
-    background: linear-gradient(90deg, hsl(330, 100%, 58%) 0%, hsl(15, 100%, 60%) 50%, hsl(28, 100%, 68%) 100%); /* Rosa → Naranja → Dorado */
+    background: linear-gradient(90deg, #fc3d03 0%, #fcba03 100%); /* Naranja rojizo → Amarillo dorado */
     transform: translateY(-3px) scale(1.02);
     box-shadow:
-      0 15px 50px hsla(15, 100%, 60%, 0.45),    /* Naranja */
-      0 8px 25px hsla(330, 100%, 58%, 0.35),    /* Rosa */
-      0 0 80px hsla(45, 100%, 55%, 0.25),       /* Amarillo glow */
+      0 15px 50px rgba(252, 61, 3, 0.45),       /* Naranja rojizo */
+      0 8px 25px rgba(252, 186, 3, 0.35),       /* Amarillo dorado */
+      0 0 80px rgba(252, 186, 3, 0.25),         /* Amarillo glow */
       inset 0 1px 2px hsla(0, 0%, 100%, 0.4);
   }
 
@@ -349,11 +349,11 @@
 
   .service-card:hover {
     background: var(--glass-bg-strong);
-    border-color: hsl(28, 100%, 68%); /* Dorado cálido #ffb759 */
+    border-color: #fcba03; /* Amarillo dorado */
     transform: translateY(-5px);
     box-shadow:
-      0 20px 40px hsla(28, 100%, 68%, 0.15),
-      0 10px 20px hsla(330, 100%, 58%, 0.1);
+      0 20px 40px rgba(252, 186, 3, 0.15),
+      0 10px 20px rgba(252, 61, 3, 0.1);
   }
 
   .stats-counter {
@@ -368,7 +368,7 @@
   .connection-line {
     position: absolute;
     height: 1px;
-    background: linear-gradient(90deg, transparent, hsl(28, 100%, 68%), transparent); /* Dorado cálido #ffb759 */
+    background: linear-gradient(90deg, transparent, #fcba03, transparent); /* Amarillo dorado */
     animation: pulse 4s ease-in-out infinite;
   }
 
@@ -376,9 +376,9 @@
     position: absolute;
     width: 8px;
     height: 8px;
-    background: hsl(28, 100%, 68%); /* Dorado cálido #ffb759 */
+    background: #fcba03; /* Amarillo dorado */
     border-radius: 50%;
-    box-shadow: 0 0 20px hsl(28, 100%, 68%);
+    box-shadow: 0 0 20px #fcba03;
     animation: pulse 3s ease-in-out infinite;
   }
 
@@ -417,10 +417,10 @@
     border-radius: inherit;
     padding: 1.5px;
     background: linear-gradient(135deg,
-      hsla(15, 100%, 65%, 0.6),      /* Naranja */
-      hsla(330, 100%, 65%, 0.5),     /* Rosa */
-      hsla(280, 100%, 70%, 0.3),     /* Púrpura */
-      hsla(45, 100%, 65%, 0.4));     /* Amarillo */
+      rgba(252, 186, 3, 0.6),        /* Amarillo dorado */
+      rgba(252, 61, 3, 0.5),         /* Naranja rojizo */
+      rgba(252, 61, 3, 0.4),         /* Naranja rojizo */
+      rgba(252, 186, 3, 0.4));       /* Amarillo dorado */
     -webkit-mask:
       linear-gradient(#fff 0 0) content-box,
       linear-gradient(#fff 0 0);
@@ -433,11 +433,11 @@
   .n8n-card:hover {
     transform: translateY(-8px) scale(1.02);
     box-shadow:
-      0 24px 70px hsla(15, 100%, 60%, 0.22),    /* Naranja */
-      0 12px 35px hsla(330, 100%, 58%, 0.18),   /* Rosa */
-      0 6px 20px hsla(45, 100%, 55%, 0.12),     /* Amarillo */
+      0 24px 70px rgba(252, 61, 3, 0.22),       /* Naranja rojizo */
+      0 12px 35px rgba(252, 186, 3, 0.18),      /* Amarillo dorado */
+      0 6px 20px rgba(252, 186, 3, 0.12),       /* Amarillo dorado */
       inset 0 1px 2px hsla(0, 0%, 100%, 1);
-    border-color: hsla(330, 100%, 65%, 0.7);    /* Rosa */
+    border-color: rgba(252, 61, 3, 0.7);        /* Naranja rojizo */
   }
 
   .n8n-card:hover::before {
@@ -446,7 +446,7 @@
 
   .n8n-gradient-bg {
     background: var(--gradient-primary);
-    box-shadow: 0 4px 20px hsla(15, 100%, 60%, 0.3);
+    box-shadow: 0 4px 20px rgba(252, 61, 3, 0.3);
   }
 
   .n8n-text-gradient {
@@ -539,11 +539,11 @@
 }
 .logo-slide-effect::before {
   left: 0;
-  background: linear-gradient(90deg, hsla(28, 100%, 68%, 0.25) 0%, transparent 100%); /* Naranja dorado cálido */
+  background: linear-gradient(90deg, rgba(252, 186, 3, 0.25) 0%, transparent 100%); /* Amarillo dorado */
 }
 .logo-slide-effect::after {
   right: 0;
-  background: linear-gradient(270deg, hsla(330, 100%, 68%, 0.25) 0%, transparent 100%); /* Rosa cálido */
+  background: linear-gradient(270deg, rgba(252, 61, 3, 0.25) 0%, transparent 100%); /* Naranja rojizo */
 }
 .logo-slide-light {
   position: absolute;
