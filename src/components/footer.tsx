@@ -35,7 +35,7 @@ const footerSections = [
 export default function Footer() {
   return (
     <footer className="bg-muted/30 border-t border-border/50">
-      <div className="container mx-auto px-12 py-16">
+      <div className="container mx-auto px-4 sm:px-6 md:px-8 lg:px-[58.08px] py-16">
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Logo y descripción */}
           <div>
@@ -87,7 +87,7 @@ export default function Footer() {
               <ul className="space-y-3 text-muted-foreground">
                 {section.links.map((link, linkIndex) => (
                   <li key={linkIndex}>
-                    <a href="#" className="hover:text-foreground transition-colors">
+                    <a href="#" className="inline-block py-2 hover:text-foreground transition-colors touch-manipulation">
                       {link}
                     </a>
                   </li>

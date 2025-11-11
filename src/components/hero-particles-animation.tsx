@@ -1,5 +1,6 @@
 import { useEffect, useState, useRef } from "react";
 import { motion } from "framer-motion";
+import { useShouldReduceAnimations } from "@/hooks/use-mobile";
 
 interface Node {
   id: number;
@@ -23,6 +24,7 @@ export default function HeroParticlesAnimation() {
   const nodesRef = useRef<Node[]>([]);
   const connectionsRef = useRef<Connection[]>([]);
   const mouseRef = useRef({ x: 0, y: 0, isHovering: false });
+  const shouldReduceAnimations = useShouldReduceAnimations();
 
   // Paleta cálida actualizada - #fcba03 a #fc3d03
   const colors = [
@@ -103,8 +105,8 @@ export default function HeroParticlesAnimation() {
         node.x = Math.max(0, Math.min(dimensions.width, node.x));
         node.y = Math.max(0, Math.min(dimensions.height, node.y));
 
-        // Influencia del mouse
-        if (mouseRef.current.isHovering) {
+        // Influencia del mouse (solo desktop)
+        if (!shouldReduceAnimations && mouseRef.current.isHovering) {
           const distToMouse = distance(node.x, node.y, mouseRef.current.x, mouseRef.current.y);
           if (distToMouse < mouseInfluenceRadius) {
             const angle = Math.atan2(mouseRef.current.y - node.y, mouseRef.current.x - node.x);
@@ -154,23 +156,29 @@ export default function HeroParticlesAnimation() {
               ctx.arc(pulseX, pulseY, 2, 0, Math.PI * 2);
               ctx.fill();
 
-              // Glow del pulso
-              ctx.shadowBlur = 10;
-              ctx.shadowColor = node.color;
-              ctx.fill();
-              ctx.shadowBlur = 0;
+              // Glow del pulso (solo desktop)
+              if (!shouldReduceAnimations) {
+                ctx.shadowBlur = 10;
+                ctx.shadowColor = node.color;
+                ctx.fill();
+                ctx.shadowBlur = 0;
+              }
             }
           }
         });
 
-        // Dibujar nodo con glow fuerte
-        ctx.shadowBlur = 25;
-        ctx.shadowColor = node.color;
+        // Dibujar nodo con glow fuerte (solo desktop)
+        if (!shouldReduceAnimations) {
+          ctx.shadowBlur = 25;
+          ctx.shadowColor = node.color;
+        }
         ctx.fillStyle = node.color;
         ctx.beginPath();
         ctx.arc(node.x, node.y, node.radius, 0, Math.PI * 2);
         ctx.fill();
-        ctx.shadowBlur = 0;
+        if (!shouldReduceAnimations) {
+          ctx.shadowBlur = 0;
+        }
 
         // Centro brillante blanco
         ctx.fillStyle = 'rgba(255, 255, 255, 0.8)';

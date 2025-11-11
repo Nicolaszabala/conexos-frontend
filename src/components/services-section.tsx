@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { Megaphone, Bot, Target, TrendingUp, PenTool, Settings } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { useScrollReveal } from "@/hooks/use-scroll-reveal";
+import { useShouldReduceAnimations } from "@/hooks/use-mobile";
 
 const services = [
   {
@@ -50,10 +51,11 @@ const services = [
 
 export default function ServicesSection() {
   const { ref, isVisible } = useScrollReveal();
+  const shouldReduceAnimations = useShouldReduceAnimations();
 
   return (
     <section id="servicios" className="py-20 bg-secondary">
-      <div className="container mx-auto px-12">
+      <div className="container mx-auto px-4 sm:px-6 md:px-8 lg:px-[58.08px]">
         <motion.div
           className="text-center mb-16"
           ref={ref}
@@ -77,7 +79,10 @@ export default function ServicesSection() {
               key={service.title}
               initial={{ opacity: 0, y: 30 }}
               animate={isVisible ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
+              transition={{
+                duration: shouldReduceAnimations ? 0.3 : 0.6,
+                delay: shouldReduceAnimations ? index * 0.05 : index * 0.1
+              }}
             >
               <Card className="n8n-card h-full">
                 <CardContent className="p-8">

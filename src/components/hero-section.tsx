@@ -18,28 +18,31 @@ export default function HeroSection() {
     if (isVisible) {
       const targets = { leads: 800000, satisfaction: 4, projects: 28, experience: 10 };
       const duration = 2000;
-      const steps = 60;
-      const stepTime = duration / steps;
+      const startTime = Date.now();
+      let animationFrame: number;
 
-      const intervals: number[] = [];
-      
-      Object.entries(targets).forEach(([key, target]) => {
-        const increment = target / steps;
-        let current = 0;
+      const animate = () => {
+        const elapsed = Date.now() - startTime;
+        const progress = Math.min(elapsed / duration, 1);
 
-        const intervalId = setInterval(() => {
-          current += increment;
-          if (current >= target) {
-            current = target;
-            clearInterval(intervalId);
-          }
-          setCounters(prev => ({ ...prev, [key]: Math.ceil(current) }));
-        }, stepTime);
-        
-        intervals.push(intervalId);
-      });
+        // Ease out cubic for smoother animation
+        const easeProgress = 1 - Math.pow(1 - progress, 3);
 
-      return () => intervals.forEach(clearInterval);
+        setCounters({
+          leads: Math.ceil(targets.leads * easeProgress),
+          satisfaction: Math.ceil(targets.satisfaction * easeProgress),
+          projects: Math.ceil(targets.projects * easeProgress),
+          experience: Math.ceil(targets.experience * easeProgress),
+        });
+
+        if (progress < 1) {
+          animationFrame = requestAnimationFrame(animate);
+        }
+      };
+
+      animationFrame = requestAnimationFrame(animate);
+
+      return () => cancelAnimationFrame(animationFrame);
     }
   }, [isVisible]);
 
@@ -47,7 +50,7 @@ export default function HeroSection() {
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-32 pb-32">
       <HeroParticlesAnimation />
       
-      <div className="container mx-auto px-12 text-center relative z-10" ref={ref}>
+      <div className="container mx-auto px-4 sm:px-6 md:px-8 lg:px-[58.08px] text-center relative z-10" ref={ref}>
         <div className="max-w-4xl mx-auto">
           <motion.h1
             className="text-5xl md:text-7xl font-bold mb-6 leading-tight"

@@ -32,7 +32,7 @@ export default function TeamSection() {
       <div className="absolute top-20 right-10 w-96 h-96 rounded-full blur-3xl" style={{backgroundColor: 'rgba(252, 61, 3, 0.1)'}} />
       <div className="absolute bottom-20 left-10 w-80 h-80 rounded-full blur-3xl" style={{backgroundColor: 'rgba(252, 186, 3, 0.1)'}} />
 
-      <div className="container mx-auto px-12 relative z-10">
+      <div className="container mx-auto px-4 sm:px-6 md:px-8 lg:px-[58.08px] relative z-10">
         <motion.div
           className="text-center mb-16"
           ref={ref}
@@ -75,7 +75,7 @@ export default function TeamSection() {
                   </div>
                   <h3 className="text-xl font-bold mb-2">{member.name}</h3>
                   <p className="text-primary font-semibold mb-3">{member.role}</p>
-                  <p className="text-lg font-medium text-gray-700 mb-2">{member.title}</p>
+                  <p className="text-lg font-medium mb-2" style={{color: '#525050'}}>{member.title}</p>
                   <p className="text-muted-foreground text-sm mb-4">{member.description}</p>
                  
                 </CardContent>

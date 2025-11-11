@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
+import { useShouldReduceAnimations } from "@/hooks/use-mobile";
 
 interface Node {
   id: number;
@@ -13,6 +14,7 @@ interface Node {
 export default function HeroNeuralAnimation() {
   const [activeNodes, setActiveNodes] = useState<number[]>([]);
   const [dataFlow, setDataFlow] = useState<{ from: number; to: number; progress: number }[]>([]);
+  const shouldReduceAnimations = useShouldReduceAnimations();
 
   // Configuración de una red neuronal más compleja y visual
   const nodes: Node[] = [
@@ -98,9 +100,9 @@ export default function HeroNeuralAnimation() {
       {/* Fondo con gradiente sutil */}
       <div className="absolute inset-0 bg-gradient-to-br from-blue-900/10 via-purple-900/5 to-cyan-900/10" />
       
-      {/* Efecto de partículas más dinámicas */}
+      {/* Efecto de partículas más dinámicas (reducido en mobile) */}
       <div className="absolute inset-0">
-        {[...Array(25)].map((_, i) => (
+        {[...Array(shouldReduceAnimations ? 8 : 25)].map((_, i) => (
           <motion.div
             key={i}
             className="absolute w-1 h-1 bg-gradient-to-r from-blue-400 to-purple-400 rounded-full"
@@ -149,17 +151,18 @@ export default function HeroNeuralAnimation() {
             <stop offset="100%" style={{ stopColor: "hsl(180, 100%, 70%)", stopOpacity: 0 }} />
           </linearGradient>
           
+          {/* Filtros optimizados para mobile (stdDeviation más bajo) */}
           <filter id="heroGlow">
-            <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
-            <feMerge> 
+            <feGaussianBlur stdDeviation={shouldReduceAnimations ? "0.5" : "2"} result="coloredBlur"/>
+            <feMerge>
               <feMergeNode in="coloredBlur"/>
               <feMergeNode in="SourceGraphic"/>
             </feMerge>
           </filter>
-          
+
           <filter id="strongGlow">
-            <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
-            <feMerge> 
+            <feGaussianBlur stdDeviation={shouldReduceAnimations ? "1" : "3"} result="coloredBlur"/>
+            <feMerge>
               <feMergeNode in="coloredBlur"/>
               <feMergeNode in="SourceGraphic"/>
             </feMerge>

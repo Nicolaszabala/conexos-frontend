@@ -38,7 +38,7 @@ export default function GoogleGrantsSection() {
       <div className="absolute top-20 right-10 w-96 h-96 rounded-full blur-3xl" style={{background: 'linear-gradient(to bottom right, rgba(252, 186, 3, 0.1), rgba(252, 61, 3, 0.1))'}} />
       <div className="absolute bottom-20 left-10 w-80 h-80 rounded-full blur-3xl" style={{background: 'linear-gradient(to bottom right, rgba(252, 186, 3, 0.1), rgba(252, 61, 3, 0.1))'}} />
 
-      <div className="container mx-auto px-12 relative z-10" ref={ref}>
+      <div className="container mx-auto px-4 sm:px-6 md:px-8 lg:px-[58.08px] relative z-10" ref={ref}>
         {/* Header Section */}
         <motion.div
           className="text-center mb-16"
@@ -83,7 +83,7 @@ export default function GoogleGrantsSection() {
                       <path d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.97 6.19C6.51 42.62 14.62 48 24 48z" fill="#34A853"/>
                     </svg>
                     <div className="text-left">
-                      <div className="text-2xl font-bold text-gray-800">Google</div>
+                      <div className="text-2xl font-bold" style={{color: '#525050'}}>Google</div>
                       <div className="text-sm text-gray-600 font-semibold">Ad Grants</div>
                     </div>
                   </div>

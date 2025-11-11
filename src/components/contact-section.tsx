@@ -60,7 +60,7 @@ export default function ContactSection() {
       <div className="absolute top-20 left-10 w-96 h-96 rounded-full blur-3xl" style={{backgroundColor: 'rgba(252, 61, 3, 0.1)'}} />
       <div className="absolute bottom-20 right-10 w-80 h-80 rounded-full blur-3xl" style={{backgroundColor: 'rgba(252, 186, 3, 0.1)'}} />
 
-      <div className="container mx-auto px-6 relative z-10">
+      <div className="container mx-auto px-4 sm:px-6 md:px-[29.04px] relative z-10">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           <motion.div
             ref={ref}
