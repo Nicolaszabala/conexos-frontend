@@ -9,21 +9,21 @@ const services = [
     title: "Marketing Digital Integral",
     description: "Estrategias 360° que incluyen SEO, SEM, redes sociales y content marketing optimizadas con IA para maximizar conversiones.",
     features: ["Auditoría digital completa", "Estrategia personalizada", "Reporting en tiempo real"],
-    image: "/fonts/socialmedia.jpg"
+    image: "/fonts/mkt.jpg"
   },
   {
     icon: Bot,
     title: "Automatización con IA",
     description: "Implementamos chatbots inteligentes, automatización de procesos y sistemas de IA para optimizar la generación y cualificación de leads.",
     features: ["Chatbots conversacionales", "Lead scoring automático", "Personalización dinámica"],
-    image: "/fonts/n8n.webp"
+    image: "/fonts/automation.jpg"
   },
   {
     icon: Target,
     title: "Generación de Leads",
     description: "Sistemas avanzados de captura y nurturing que convierten visitantes en clientes potenciales de alta calidad mediante IA predictiva.",
     features: ["Landing pages optimizadas", "Email marketing inteligente", "Segmentación avanzada"],
-    image: "/fonts/salesfunnel.png"
+    image: "/fonts/funnel.jpg"
   },
   {
     icon: TrendingUp,
@@ -37,14 +37,14 @@ const services = [
     title: "Contenido Inteligente",
     description: "Creación de contenido optimizado con IA que resuena con tu audiencia y mejora el posicionamiento orgánico de tu marca.",
     features: ["Copywriting con IA", "Optimización SEO", "Distribución multicanal"],
-    image: "/fonts/smartcontent.webp"
+    image: "/fonts/smart.jpg"
   },
   {
     icon: Settings,
     title: "CRM Inteligente",
     description: "Implementación y optimización de CRM con IA para automatizar el seguimiento de leads y maximizar las conversiones de ventas.",
     features: ["Integración completa", "Workflows automáticos", "Scoring predictivo"],
-    image: "/fonts/hubspot.png"
+    image: "/fonts/crm.jpg"
   }
 ];
 
