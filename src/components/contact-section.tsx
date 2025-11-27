@@ -62,12 +62,7 @@ export default function ContactSection() {
 
       <div className="container mx-auto px-4 sm:px-6 md:px-8 relative z-10">
         <div className="grid lg:grid-cols-2 gap-10 md:gap-12 lg:gap-16 items-start">
-          <motion.div
-            ref={ref}
-            initial={{ opacity: 0, x: -30 }}
-            animate={isVisible ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 0.6 }}
-          >
+          <div ref={ref}>
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 md:mb-6">
               ¿Listo para <span className="gradient-text">Transformar</span> tu
               Negocio?
@@ -79,12 +74,9 @@ export default function ContactSection() {
 
             <div className="space-y-4 md:space-y-6 mb-6 md:mb-8">
               {contactInfo.map((info, index) => (
-                <motion.div
+                <div
                   key={info.title}
                   className="flex items-center space-x-3 md:space-x-4"
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={isVisible ? { opacity: 1, y: 0 } : {}}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
                 >
                   <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-lg flex items-center justify-center flex-shrink-0" style={{
                     background: index === 0 ? 'linear-gradient(to bottom right, #fcba03, #fc3d03)' : // Teléfono
@@ -97,18 +89,14 @@ export default function ContactSection() {
                     <p className="font-semibold text-sm sm:text-base">{info.title}</p>
                     <p className="text-muted-foreground text-sm sm:text-base">{info.value}</p>
                   </div>
-                </motion.div>
+                </div>
               ))}
             </div>
 
             <div className="flex space-x-4"></div>
-          </motion.div>
+          </div>
 
-          <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            animate={isVisible ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 0.6, delay: 0.2 }}
-          >
+          <div>
             <Card className="bg-card/50 border-primary/20 backdrop-blur-sm">
               <CardContent className="p-5 sm:p-6 md:p-8">
                 <h3 className="text-xl sm:text-2xl font-bold mb-4 md:mb-6">Contactar</h3>
@@ -202,7 +190,7 @@ export default function ContactSection() {
                 </form>
               </CardContent>
             </Card>
-          </motion.div>
+          </div>
         </div>
       </div>
     </section>

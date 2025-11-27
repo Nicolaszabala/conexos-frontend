@@ -55,7 +55,7 @@ export default function HeroSection() {
           <motion.h1
             className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight"
             initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
+            animate={isVisible ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6 }}
           >
             <span className="n8n-text-gradient">Soluciones Tecnológicas</span> para Empresas con Propósito
@@ -64,7 +64,7 @@ export default function HeroSection() {
           <motion.p
             className="text-base sm:text-lg md:text-xl lg:text-2xl text-muted-foreground mb-8 max-w-3xl mx-auto"
             initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
+            animate={isVisible ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
             <span className="inline-flex flex-wrap gap-2 justify-center mb-4">
@@ -87,7 +87,7 @@ export default function HeroSection() {
           <motion.div
             className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12 md:mb-16"
             initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
+            animate={isVisible ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.4 }}
           >
             <a href="https://zcal.co/conexos/15min" target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto">
@@ -103,7 +103,7 @@ export default function HeroSection() {
           <motion.div
             className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 md:gap-8"
             initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
+            animate={isVisible ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.6 }}
           >
             <div className="text-center p-3 sm:p-4">

@@ -40,12 +40,7 @@ export default function GoogleGrantsSection() {
 
       <div className="container mx-auto px-4 sm:px-6 md:px-8 lg:px-[58.08px] relative z-10" ref={ref}>
         {/* Header Section */}
-        <motion.div
-          className="text-center mb-16"
-          initial={{ opacity: 0, y: 30 }}
-          animate={isVisible ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6 }}
-        >
+        <div className="text-center mb-16">
           <div className="inline-flex items-center gap-3 mb-6 px-6 py-3 rounded-full border" style={{background: 'linear-gradient(to right, rgba(252, 186, 3, 0.1), rgba(252, 61, 3, 0.1))', borderColor: 'rgba(252, 186, 3, 0.2)'}}>
             <span className="text-sm font-semibold" style={{color: '#fc3d03'}}>Programa Exclusivo para ONGs</span>
           </div>
@@ -59,15 +54,10 @@ export default function GoogleGrantsSection() {
             Somos <strong className="text-foreground">especialistas certificados</strong> en gestionar Google Ad Grants.
             Maximizamos tu presupuesto de $10K mensuales para captar donantes de alto valor.
           </p>
-        </motion.div>
+        </div>
 
         {/* Main Content Card */}
-        <motion.div
-          className="max-w-5xl mx-auto"
-          initial={{ opacity: 0, y: 30 }}
-          animate={isVisible ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6, delay: 0.2 }}
-        >
+        <div className="max-w-5xl mx-auto">
           <div className="n8n-card p-10 md:p-12">
             {/* Google Grants Logo Placeholder */}
             <div className="flex justify-center mb-10">
@@ -96,19 +86,16 @@ export default function GoogleGrantsSection() {
             {/* Benefits Grid */}
             <div className="grid md:grid-cols-3 gap-8 mb-12">
               {benefits.map((benefit, index) => (
-                <motion.div
+                <div
                   key={benefit.title}
                   className="text-center"
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={isVisible ? { opacity: 1, y: 0 } : {}}
-                  transition={{ duration: 0.6, delay: 0.3 + index * 0.1 }}
                 >
                   <div className="w-16 h-16 mx-auto mb-4 rounded-2xl flex items-center justify-center" style={{background: 'linear-gradient(to bottom right, #fcba03, #fc3d03)'}}>
                     <benefit.icon className="w-8 h-8 text-white" />
                   </div>
                   <h3 className="text-lg font-bold mb-2">{benefit.title}</h3>
                   <p className="text-muted-foreground">{benefit.description}</p>
-                </motion.div>
+                </div>
               ))}
             </div>
 
@@ -119,12 +106,9 @@ export default function GoogleGrantsSection() {
               </h3>
               <div className="space-y-4">
                 {steps.map((step, index) => (
-                  <motion.div
+                  <div
                     key={step}
                     className="flex items-start gap-4"
-                    initial={{ opacity: 0, x: -20 }}
-                    animate={isVisible ? { opacity: 1, x: 0 } : {}}
-                    transition={{ duration: 0.4, delay: 0.5 + index * 0.1 }}
                   >
                     <div className="flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center text-white font-bold text-sm" style={{background: 'linear-gradient(to bottom right, #fcba03, #fc3d03)'}}>
                       {index + 1}
@@ -133,18 +117,13 @@ export default function GoogleGrantsSection() {
                       <p className="text-foreground font-medium">{step}</p>
                     </div>
                     <Check className="w-5 h-5 text-green-500 flex-shrink-0 mt-1" />
-                  </motion.div>
+                  </div>
                 ))}
               </div>
             </div>
 
             {/* CTA */}
-            <motion.div
-              className="text-center mt-10"
-              initial={{ opacity: 0, y: 20 }}
-              animate={isVisible ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.6, delay: 0.8 }}
-            >
+            <div className="text-center mt-10">
               <a href="https://zcal.co/conexos/15min" target="_blank" rel="noopener noreferrer" className="inline-block w-full sm:w-auto">
                 <Button className="hero-button px-4 sm:px-6 md:px-8 py-3 sm:py-4 text-sm sm:text-base md:text-lg font-semibold w-full sm:w-auto whitespace-normal sm:whitespace-nowrap">
                   <span className="inline sm:inline">Consulta Gratuita sobre Google Grants</span>
@@ -154,24 +133,19 @@ export default function GoogleGrantsSection() {
               <p className="text-sm text-muted-foreground mt-4">
                 Evaluamos tu elegibilidad sin compromiso
               </p>
-            </motion.div>
+            </div>
           </div>
-        </motion.div>
+        </div>
 
         {/* Additional Info */}
-        <motion.div
-          className="mt-12 text-center max-w-3xl mx-auto"
-          initial={{ opacity: 0, y: 20 }}
-          animate={isVisible ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6, delay: 1 }}
-        >
+        <div className="mt-12 text-center max-w-3xl mx-auto">
           <div className="n8n-card p-6">
             <p className="text-muted-foreground">
               <strong className="text-foreground">¿Tu ONG califica?</strong> Organizaciones benéficas registradas 501(c)(3) o equivalente local pueden acceder a este programa.
               Te ayudamos con todo el proceso de aplicación y gestión continua.
             </p>
           </div>
-        </motion.div>
+        </div>
       </div>
     </section>
   );

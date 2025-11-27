@@ -104,9 +104,9 @@ export default function Navigation() {
               aria-controls="mobile-menu"
             >
               {isMobileMenuOpen ? (
-                <X className="text-white w-7 h-7" aria-hidden="true" />
+                <X className="w-7 h-7" style={{color: '#fc3d03'}} aria-hidden="true" />
               ) : (
-                <Menu className="text-white w-7 h-7" aria-hidden="true" />
+                <Menu className="w-7 h-7" style={{color: '#fc3d03'}} aria-hidden="true" />
               )}
             </button>
           </div>

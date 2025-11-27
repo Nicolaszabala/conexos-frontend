@@ -33,30 +33,19 @@ export default function TeamSection() {
       <div className="absolute bottom-20 left-10 w-80 h-80 rounded-full blur-3xl" style={{backgroundColor: 'rgba(252, 186, 3, 0.1)'}} />
 
       <div className="container mx-auto px-4 sm:px-6 md:px-8 lg:px-[58.08px] relative z-10">
-        <motion.div
-          className="text-center mb-16"
-          ref={ref}
-          initial={{ opacity: 0, y: 30 }}
-          animate={isVisible ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6 }}
-        >
+        <div className="text-center mb-16" ref={ref}>
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
             Nuestro <span className="n8n-text-gradient">Equipo</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Especialistas en marketing digital e IA que combinan creatividad 
+            Especialistas en marketing digital e IA que combinan creatividad
             estratégica con expertise técnico para impulsar tu crecimiento.
           </p>
-        </motion.div>
+        </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
           {teamMembers.map((member, index) => (
-            <motion.div
-              key={member.name}
-              initial={{ opacity: 0, y: 30 }}
-              animate={isVisible ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
-            >
+            <div key={member.name}>
               <Card className="n8n-card text-center h-full">
                 <CardContent className="p-6">
                   <div className="w-48 h-48 mx-auto mb-6 rounded-full overflow-hidden border-4 border-primary/20 bg-gray-100">
@@ -77,10 +66,10 @@ export default function TeamSection() {
                   <p className="text-primary font-semibold mb-3">{member.role}</p>
                   <p className="text-lg font-medium mb-2" style={{color: '#525050'}}>{member.title}</p>
                   <p className="text-muted-foreground text-sm mb-4">{member.description}</p>
-                 
+
                 </CardContent>
               </Card>
-            </motion.div>
+            </div>
           ))}
         </div>
       </div>
