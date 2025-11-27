@@ -152,21 +152,21 @@ export default function AISolutionsSection() {
                 </p>
                 <div className="grid grid-cols-3 gap-6">
                   <div className="text-center">
-                    <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center mx-auto mb-3 shadow-md">
+                    <div className="w-12 h-12 bg-gradient-to-br from-orange-500 to-orange-600 rounded-xl flex items-center justify-center mx-auto mb-3 shadow-md">
                       <div className="w-3 h-3 bg-white rounded-full"></div>
                     </div>
                     <p className="text-sm font-semibold text-foreground">ML</p>
                     <p className="text-xs text-muted-foreground mt-1">Machine Learning</p>
                   </div>
                   <div className="text-center">
-                    <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-purple-600 rounded-xl flex items-center justify-center mx-auto mb-3 shadow-md">
+                    <div className="w-12 h-12 bg-gradient-to-br from-amber-500 to-amber-600 rounded-xl flex items-center justify-center mx-auto mb-3 shadow-md">
                       <div className="w-3 h-3 bg-white rounded-full"></div>
                     </div>
                     <p className="text-sm font-semibold text-foreground">NLP</p>
                     <p className="text-xs text-muted-foreground mt-1">Natural Language</p>
                   </div>
                   <div className="text-center">
-                    <div className="w-12 h-12 bg-gradient-to-br from-green-500 to-green-600 rounded-xl flex items-center justify-center mx-auto mb-3 shadow-md">
+                    <div className="w-12 h-12 bg-gradient-to-br from-orange-600 to-red-600 rounded-xl flex items-center justify-center mx-auto mb-3 shadow-md">
                       <div className="w-3 h-3 bg-white rounded-full"></div>
                     </div>
                     <p className="text-sm font-semibold text-foreground">CV</p>

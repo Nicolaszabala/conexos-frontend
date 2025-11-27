@@ -145,10 +145,10 @@ export default function GoogleGrantsSection() {
               animate={isVisible ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: 0.8 }}
             >
-              <a href="https://zcal.co/conexos/15min" target="_blank" rel="noopener noreferrer">
-                <Button className="hero-button px-8 py-4 text-lg font-semibold">
-                  Consulta Gratuita sobre Google Grants
-                  <ArrowRight className="ml-2 h-5 w-5" />
+              <a href="https://zcal.co/conexos/15min" target="_blank" rel="noopener noreferrer" className="inline-block w-full sm:w-auto">
+                <Button className="hero-button px-4 sm:px-6 md:px-8 py-3 sm:py-4 text-sm sm:text-base md:text-lg font-semibold w-full sm:w-auto whitespace-normal sm:whitespace-nowrap">
+                  <span className="inline sm:inline">Consulta Gratuita sobre Google Grants</span>
+                  <ArrowRight className="ml-2 h-4 w-4 sm:h-5 sm:w-5 flex-shrink-0" />
                 </Button>
               </a>
               <p className="text-sm text-muted-foreground mt-4">

@@ -95,63 +95,66 @@ export default function Navigation() {
               </a>
             </div>
 
-            {/* Mobile Menu Button */}
+            {/* Mobile Menu Button - Touch target optimizado (mínimo 44x44px) */}
             <button
-              className="md:hidden p-3 -mr-3 touch-manipulation"
+              className="md:hidden p-3 -mr-2 touch-manipulation min-w-[44px] min-h-[44px] flex items-center justify-center"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               aria-label={isMobileMenuOpen ? "Cerrar menú" : "Abrir menú"}
               aria-expanded={isMobileMenuOpen}
               aria-controls="mobile-menu"
             >
               {isMobileMenuOpen ? (
-                <X className="text-white w-6 h-6" aria-hidden="true" />
+                <X className="text-white w-7 h-7" aria-hidden="true" />
               ) : (
-                <Menu className="text-white w-6 h-6" aria-hidden="true" />
+                <Menu className="text-white w-7 h-7" aria-hidden="true" />
               )}
             </button>
           </div>
 
-          {/* Mobile Menu */}
+          {/* Mobile Menu - Optimizado para touch */}
           {isMobileMenuOpen && (
             <motion.div
               id="mobile-menu"
               role="navigation"
               aria-label="Menú principal móvil"
-              className="md:hidden bg-background/95 backdrop-blur-md border-t border-border mt-4"
+              className="md:hidden bg-background/98 backdrop-blur-lg border-t border-border mt-4 shadow-lg"
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -20 }}
+              transition={{ duration: 0.2 }}
             >
-              <div className="container mx-auto px-4 sm:px-6 md:px-8 py-4 space-y-2">
+              <div className="container mx-auto px-4 sm:px-6 md:px-8 py-6 space-y-1">
                 <button
                   onClick={() => handleNavigation("servicios")}
-                  className="block w-full text-left py-4 px-2 text-base font-medium text-muted-foreground hover:text-foreground transition-colors touch-manipulation"
+                  className="block w-full text-left py-4 px-4 text-lg font-medium text-muted-foreground hover:text-foreground hover:bg-muted/50 transition-all rounded-lg touch-manipulation min-h-[52px] active:scale-98"
                 >
                   Servicios
                 </button>
                 <button
                   onClick={() => handleNavigation("soluciones")}
-                  className="block w-full text-left py-4 px-2 text-base font-medium text-muted-foreground hover:text-foreground transition-colors touch-manipulation"
+                  className="block w-full text-left py-4 px-4 text-lg font-medium text-muted-foreground hover:text-foreground hover:bg-muted/50 transition-all rounded-lg touch-manipulation min-h-[52px] active:scale-98"
                 >
                   Soluciones IA
                 </button>
                 <button
                   onClick={() => handleNavigation("industrias")}
-                  className="block w-full text-left py-4 px-2 text-base font-medium text-muted-foreground hover:text-foreground transition-colors touch-manipulation"
+                  className="block w-full text-left py-4 px-4 text-lg font-medium text-muted-foreground hover:text-foreground hover:bg-muted/50 transition-all rounded-lg touch-manipulation min-h-[52px] active:scale-98"
                 >
                   Industrias
                 </button>
                 <button
                   onClick={() => handleNavigation("equipo")}
-                  className="block w-full text-left py-4 px-2 text-base font-medium text-muted-foreground hover:text-foreground transition-colors touch-manipulation"
+                  className="block w-full text-left py-4 px-4 text-lg font-medium text-muted-foreground hover:text-foreground hover:bg-muted/50 transition-all rounded-lg touch-manipulation min-h-[52px] active:scale-98"
                 >
                   Equipo
                 </button>
-                <a href="https://zcal.co/conexos/15min" target="_blank" rel="noopener noreferrer" className="block w-full pt-2">
-                  <Button className="hero-button w-full py-4 touch-manipulation">
-                    Contactar
-                  </Button>
-                </a>
+                <div className="pt-4">
+                  <a href="https://zcal.co/conexos/15min" target="_blank" rel="noopener noreferrer" className="block w-full">
+                    <Button className="hero-button w-full py-4 text-lg touch-manipulation min-h-[52px]">
+                      Contactar
+                    </Button>
+                  </a>
+                </div>
               </div>
             </motion.div>
           )}

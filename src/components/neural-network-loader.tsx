@@ -64,7 +64,7 @@ export default function NeuralNetworkLoader() {
             {[...Array(20)].map((_, i) => (
               <motion.div
                 key={i}
-                className="absolute w-1 h-1 bg-blue-500/30 rounded-full"
+                className="absolute w-1 h-1 bg-orange-500/30 rounded-full"
                 style={{
                   left: `${Math.random() * 100}%`,
                   top: `${Math.random() * 100}%`,
@@ -84,8 +84,8 @@ export default function NeuralNetworkLoader() {
 
           <div className="relative w-96 h-96">
             {/* Fondo de red */}
-            <motion.div 
-              className="absolute inset-0 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 rounded-2xl border border-slate-700/50"
+            <motion.div
+              className="absolute inset-0 bg-gradient-to-br from-orange-900 via-orange-800 to-orange-900 rounded-2xl border border-orange-700/50"
               initial={{ scale: 0.8, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               transition={{ duration: 0.5 }}
@@ -241,7 +241,7 @@ export default function NeuralNetworkLoader() {
 
             {/* Barra de progreso */}
             <motion.div
-              className="absolute bottom-4 left-1/2 transform -translate-x-1/2 w-32 h-1 bg-slate-700 rounded-full overflow-hidden"
+              className="absolute bottom-4 left-1/2 transform -translate-x-1/2 w-32 h-1 bg-orange-700 rounded-full overflow-hidden"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.5, delay: 0.7 }}

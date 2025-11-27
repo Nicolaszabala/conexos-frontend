@@ -98,14 +98,14 @@ export default function HeroNeuralAnimation() {
   return (
     <div className="absolute inset-0 overflow-hidden pointer-events-none">
       {/* Fondo con gradiente sutil */}
-      <div className="absolute inset-0 bg-gradient-to-br from-blue-900/10 via-purple-900/5 to-cyan-900/10" />
+      <div className="absolute inset-0 bg-gradient-to-br from-orange-900/10 via-amber-900/5 to-orange-900/10" />
       
       {/* Efecto de partículas más dinámicas (reducido en mobile) */}
       <div className="absolute inset-0">
         {[...Array(shouldReduceAnimations ? 8 : 25)].map((_, i) => (
           <motion.div
             key={i}
-            className="absolute w-1 h-1 bg-gradient-to-r from-blue-400 to-purple-400 rounded-full"
+            className="absolute w-1 h-1 bg-gradient-to-r from-orange-400 to-amber-400 rounded-full"
             style={{
               left: `${Math.random() * 100}%`,
               top: `${Math.random() * 100}%`,

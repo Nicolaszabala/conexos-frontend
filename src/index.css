@@ -28,28 +28,28 @@
   --border: hsl(240, 30%, 85%);
   --input: hsl(240, 25%, 92%);
 
-  --primary: hsl(210, 100%, 55%);
+  --primary: hsl(18, 98%, 50%);
   --primary-foreground: hsl(0, 0%, 100%);
 
   --secondary: hsl(240, 20%, 94%);
   --secondary-foreground: #525050;
 
-  --accent: hsl(270, 100%, 62%);
+  --accent: hsl(42, 98%, 50%);
   --accent-foreground: hsl(0, 0%, 100%);
 
   --destructive: hsl(0, 84%, 60%);
   --destructive-foreground: hsl(0, 0%, 100%);
 
-  --ring: hsl(210, 100%, 55%);
+  --ring: hsl(18, 98%, 50%);
   --radius: 1rem;
 
   /* Glassmorphism VIBRANTE */
   --glass-bg: hsla(0, 0%, 100%, 0.6);
   --glass-bg-strong: hsla(0, 0%, 100%, 0.8);
-  --glass-border: hsla(240, 50%, 75%, 0.4);
-  --glass-border-strong: hsla(240, 60%, 70%, 0.6);
-  --glass-shadow: hsla(240, 50%, 30%, 0.15);
-  --glass-shadow-strong: hsla(240, 50%, 20%, 0.25);
+  --glass-border: hsla(30, 100%, 60%, 0.4);
+  --glass-border-strong: hsla(25, 100%, 55%, 0.6);
+  --glass-shadow: rgba(252, 61, 3, 0.12);
+  --glass-shadow-strong: rgba(252, 61, 3, 0.2);
 
   /* Acentos de Color - TONOS CÁLIDOS ACTUALIZADOS */
   --warm-gold: #fcba03;                   /* Amarillo dorado principal */
@@ -153,14 +153,26 @@
     }
   }
 
+  /* Optimización mobile: gradientes más simples y menos blur */
   @media (max-width: 768px) {
     body::before {
       background:
-        radial-gradient(ellipse 700px 500px at 30% 15%, rgba(252, 186, 3, 0.22) 0%, transparent 60%), /* Amarillo dorado #fcba03 */
-        radial-gradient(ellipse 650px 450px at 75% 30%, rgba(252, 61, 3, 0.20) 0%, transparent 60%), /* Naranja rojizo #fc3d03 */
-        radial-gradient(ellipse 600px 400px at 50% 85%, rgba(252, 61, 3, 0.18) 0%, transparent 60%); /* Naranja rojizo #fc3d03 */
-      filter: blur(40px);
-      animation: mesh-float 30s ease-in-out infinite;
+        radial-gradient(ellipse 600px 400px at 30% 15%, rgba(252, 186, 3, 0.18) 0%, transparent 55%), /* Amarillo dorado #fcba03 */
+        radial-gradient(ellipse 550px 350px at 75% 30%, rgba(252, 61, 3, 0.16) 0%, transparent 55%), /* Naranja rojizo #fc3d03 */
+        radial-gradient(ellipse 500px 300px at 50% 85%, rgba(252, 61, 3, 0.14) 0%, transparent 55%); /* Naranja rojizo #fc3d03 */
+      filter: blur(30px); /* Menos blur para mejor rendimiento */
+      animation: mesh-float 40s ease-in-out infinite; /* Más lenta */
+    }
+  }
+
+  /* Simplificar aún más en dispositivos muy pequeños */
+  @media (max-width: 480px) {
+    body::before {
+      background:
+        radial-gradient(ellipse 500px 300px at 50% 20%, rgba(252, 186, 3, 0.15) 0%, transparent 50%), /* Amarillo dorado #fcba03 */
+        radial-gradient(ellipse 450px 250px at 50% 80%, rgba(252, 61, 3, 0.13) 0%, transparent 50%); /* Naranja rojizo #fc3d03 */
+      filter: blur(20px); /* Mínimo blur */
+      animation: mesh-float 50s ease-in-out infinite; /* Muy lenta */
     }
   }
 
@@ -235,26 +247,64 @@
   pointer-events: none;
 }
 
-/* Infinite logo slider animation - MÁS FLUIDA */
+/* Infinite logo slider animation - MÁS FLUIDA Y OPTIMIZADA PARA MOBILE */
 @keyframes slide {
   0% {
     transform: translateX(0);
   }
   100% {
-    transform: translateX(calc(-200px * 8)); /* Width of one set of logos */
+    transform: translateX(calc(-140px * 9)); /* Width of one set of logos en mobile */
   }
 }
 
 .animate-slide {
-  animation: slide 40s linear infinite; /* Más lenta y suave */
+  animation: slide 35s linear infinite; /* Animación continua y fluida */
   will-change: transform; /* Optimización de rendimiento */
 }
 
-.animate-slide:hover {
-  animation-play-state: paused;
+/* Ajuste de animación para tablet y desktop */
+@media (min-width: 768px) {
+  @keyframes slide {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(calc(-180px * 9)); /* Width of one set of logos en tablet */
+    }
+  }
+}
+
+@media (min-width: 1024px) {
+  @keyframes slide {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(calc(-200px * 9)); /* Width of one set of logos en desktop */
+    }
+  }
+}
+
+/* Optimización para mobile: animación más lenta y suave */
+@media (max-width: 767px) {
+  .animate-slide {
+    animation: slide 40s linear infinite; /* Más lenta en mobile */
+  }
+}
+
+/* Reducir animación en dispositivos con batería baja o prefers-reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+  .animate-slide {
+    animation: slide 60s linear infinite; /* Mucho más lenta */
+  }
 }
 
 @layer components {
+  /* Active scale effect para touch feedback en mobile */
+  .active\:scale-98:active {
+    transform: scale(0.98);
+  }
+
   .gradient-text {
     background: var(--n8n-gradient);
     -webkit-background-clip: text;
@@ -273,8 +323,8 @@
     letter-spacing: 0.3px;
     background-clip: padding-box; /* Clip del gradiente al padding-box */
     box-shadow:
-      0 8px 30px hsla(210, 100%, 55%, 0.35),
-      0 4px 15px hsla(270, 100%, 62%, 0.25),
+      0 8px 30px rgba(252, 61, 3, 0.35),
+      0 4px 15px rgba(252, 186, 3, 0.25),
       inset 0 1px 1px hsla(0, 0%, 100%, 0.3);
   }
 
@@ -365,12 +415,22 @@
   }
 
   .stats-counter {
-    font-size: 3rem;
     font-weight: 800;
     background: var(--n8n-gradient);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+  }
+
+  /* Optimización mobile para stats-counter */
+  @media (max-width: 640px) {
+    .stats-counter {
+      /* Simplificar el gradiente en mobile para mejor rendimiento */
+      background: linear-gradient(90deg, #fcba03 0%, #fc3d03 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
   }
 
   .connection-line {
@@ -458,16 +518,45 @@
       /* Reemplazar backdrop-filter costoso con background sólido */
       backdrop-filter: none;
       -webkit-backdrop-filter: none;
-      background: rgba(20, 20, 30, 0.95);
+      background: var(--glass-bg-strong);
       /* Simplificar box-shadow a una sola sombra */
       box-shadow: 0 4px 16px var(--glass-shadow);
+      /* Reducir transform en hover */
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
     }
 
     .n8n-card:hover {
-      /* Reducir shadows en hover para mobile */
+      /* Reducir shadows y transform en hover para mobile */
+      transform: translateY(-4px) scale(1.01);
       box-shadow:
-        0 12px 32px rgba(252, 61, 3, 0.15),
+        0 8px 24px rgba(252, 61, 3, 0.12),
         inset 0 1px 2px hsla(0, 0%, 100%, 0.8);
+    }
+
+    /* Desactivar hover effects en dispositivos touch */
+    @media (hover: none) {
+      .n8n-card:hover {
+        transform: none;
+        box-shadow: 0 4px 16px var(--glass-shadow);
+      }
+    }
+  }
+
+  /* Optimización para dispositivos muy pequeños */
+  @media (max-width: 480px) {
+    .n8n-card {
+      border-radius: 16px; /* Reducir border-radius */
+    }
+
+    .hero-button {
+      box-shadow: 0 4px 20px rgba(252, 61, 3, 0.25); /* Reducir shadow */
+    }
+
+    .hero-button:hover {
+      transform: translateY(-2px) scale(1.01); /* Reducir movimiento */
+      box-shadow:
+        0 10px 35px rgba(252, 61, 3, 0.35),
+        0 4px 15px rgba(252, 186, 3, 0.25);
     }
   }
 
@@ -565,9 +654,26 @@
   }
 
   .logo-slide-effect {
-  position: relative;
-  overflow: hidden;
-}
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* Logo slide item con tamaños responsive */
+  .logo-slide-item {
+    width: 140px;
+  }
+
+  @media (min-width: 768px) {
+    .logo-slide-item {
+      width: 180px;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .logo-slide-item {
+      width: 200px;
+    }
+  }
 .logo-slide-effect::before,
 .logo-slide-effect::after {
   content: "";

@@ -19,20 +19,21 @@ const TrustedBySection = () => {
     { id: 6, alt: 'Fauna Brava', src: '/fonts/fauna-blanco.png' },
     { id: 7, alt: 'Asociación Petís', src: '/fonts/petis-blanco.png' },
     { id: 8, alt: 'Verssalo', src: '/fonts/verssalo_white.png' },
+    { id: 9, alt: 'KriyaYogaBabaji', src: '/fonts/kriyayogalogo.png' },
   ];
 
   // Duplicate the logos to create an infinite loop effect
   const duplicatedLogos = [...logos, ...logos, ...logos];
 
   return (
-    <section className="py-20 md:py-32 bg-gradient-to-br from-muted/30 to-background overflow-hidden relative">
+    <section className="py-12 md:py-20 lg:py-32 bg-gradient-to-br from-muted/30 to-background overflow-hidden relative">
       {/* Decorative gradient - TONO CÁLIDO */}
       <div className="absolute top-10 left-1/2 -translate-x-1/2 w-96 h-96 bg-orange-400/10 rounded-full blur-3xl" />
 
       {/* Título centrado con container */}
-      <div className="container mx-auto px-4 relative z-10 mb-24">
-        <h2 className="text-4xl text-center md:text-5xl font-bold text-foreground">
-          Confían en <span className="n8n-text-gradient">nosotros</span>
+      <div className="container mx-auto px-4 relative z-10 mb-12 md:mb-16 lg:mb-24">
+        <h2 className="text-3xl sm:text-4xl text-center md:text-5xl font-bold text-foreground">
+          Trabajamos <span className="n8n-text-gradient">con</span>
         </h2>
       </div>
 
@@ -45,17 +46,19 @@ const TrustedBySection = () => {
             {duplicatedLogos.map((logo, index) => (
               <div
                 key={`${logo.id}-${index}`}
-                className="flex-shrink-0 px-8 py-6 flex items-center justify-center"
-                style={{ width: '200px' }}
+                className="logo-slide-item flex-shrink-0 px-4 md:px-6 lg:px-8 py-4 md:py-6 flex items-center justify-center"
               >
-                <div className="relative w-full h-20">
+                <div className="relative w-full h-12 md:h-16 lg:h-20">
                   <img
                     src={logo.src}
                     alt={logo.alt}
-                    className="object-contain w-full h-full absolute inset-0 opacity-60 hover:opacity-100 transition-opacity grayscale hover:grayscale-0"
+                    loading="lazy"
+                    className={`object-contain w-full h-full absolute inset-0 opacity-60 hover:opacity-100 transition-opacity ${logo.id === 9 ? '' : 'grayscale hover:grayscale-0'}`}
                     style={{
                       objectFit: 'contain',
-                      filter: 'invert(1) brightness(0.2) sepia(0.1) hue-rotate(180deg)'
+                      filter: logo.id === 9
+                        ? 'brightness(0.8)'
+                        : 'invert(1) brightness(0.2) sepia(0.1) hue-rotate(180deg)'
                     }}
                   />
                 </div>

@@ -54,26 +54,26 @@ export default function ServicesSection() {
   const shouldReduceAnimations = useShouldReduceAnimations();
 
   return (
-    <section id="servicios" className="py-20 bg-secondary">
+    <section id="servicios" className="py-12 md:py-16 lg:py-20 bg-secondary">
       <div className="container mx-auto px-4 sm:px-6 md:px-8 lg:px-[58.08px]">
         <motion.div
-          className="text-center mb-16"
+          className="text-center mb-10 md:mb-12 lg:mb-16"
           ref={ref}
           initial={{ opacity: 0, y: 30 }}
           animate={isVisible ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 md:mb-6">
             Nuestros <span className="n8n-text-gradient">Servicios</span>
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+          <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto px-4">
             Soluciones completas de marketing digital con IA, automatización y desarrollo técnico.
-            <br />
-            <span className="text-foreground font-semibold mt-2 inline-block">Desde 1.500€/mes en retainers mensuales</span>
+            <br className="hidden sm:block" />
+            <span className="text-foreground font-semibold mt-2 inline-block text-sm sm:text-base md:text-lg">Desde 1.500€/mes en retainers mensuales</span>
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
           {services.map((service, index) => (
             <motion.div
               key={service.title}
@@ -85,22 +85,22 @@ export default function ServicesSection() {
               }}
             >
               <Card className="n8n-card h-full">
-                <CardContent className="p-8">
+                <CardContent className="p-5 sm:p-6 md:p-8">
                   <img
                     src={service.image}
                     alt={service.title}
-                    className="w-full h-48 object-cover rounded-lg mb-6"
+                    className="w-full h-40 sm:h-44 md:h-48 object-cover rounded-lg mb-4 md:mb-6"
                     loading="lazy"
                   />
-                  <div className="w-12 h-12 n8n-gradient-bg rounded-lg flex items-center justify-center mb-4">
-                    <service.icon className="text-white text-xl" />
+                  <div className="w-10 h-10 sm:w-12 sm:h-12 n8n-gradient-bg rounded-lg flex items-center justify-center mb-3 md:mb-4">
+                    <service.icon className="text-white w-5 h-5 sm:w-6 sm:h-6" />
                   </div>
-                  <h3 className="text-2xl font-bold mb-4">{service.title}</h3>
-                  <p className="text-muted-foreground mb-6">{service.description}</p>
-                  <ul className="space-y-2 text-sm text-muted-foreground">
+                  <h3 className="text-xl sm:text-2xl font-bold mb-3 md:mb-4">{service.title}</h3>
+                  <p className="text-sm sm:text-base text-muted-foreground mb-4 md:mb-6">{service.description}</p>
+                  <ul className="space-y-2 text-xs sm:text-sm text-muted-foreground">
                     {service.features.map((feature, featureIndex) => (
                       <li key={featureIndex} className="flex items-center">
-                        <div className="w-2 h-2 bg-green-500 rounded-full mr-2" />
+                        <div className="w-2 h-2 bg-green-500 rounded-full mr-2 flex-shrink-0" />
                         {feature}
                       </li>
                     ))}

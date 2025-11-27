@@ -44,8 +44,8 @@ export default function CaseStudiesSection() {
   return (
     <section id="casos" className="py-20 bg-muted/30 relative overflow-hidden">
       {/* Decorative elements */}
-      <div className="absolute top-40 right-10 w-80 h-80 bg-green-400/10 rounded-full blur-3xl" />
-      <div className="absolute bottom-40 left-10 w-96 h-96 bg-blue-400/10 rounded-full blur-3xl" />
+      <div className="absolute top-40 right-10 w-80 h-80 bg-amber-400/10 rounded-full blur-3xl" />
+      <div className="absolute bottom-40 left-10 w-96 h-96 bg-orange-400/10 rounded-full blur-3xl" />
 
       <div className="container mx-auto px-12 relative z-10">
         <motion.div
